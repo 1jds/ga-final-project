@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ResultsSection from "./ResultsSection";
+import RhymingHelp from "./RhymingHelp";
 
 export default function SearchBar() {
   const [APIresponse, setAPIresponse] = useState([
@@ -67,6 +68,7 @@ export default function SearchBar() {
   //     )
   // })
 
+  
   return (
     <>
       <p>The Search Bar goes here.</p>
@@ -135,6 +137,7 @@ export default function SearchBar() {
       </form>
       <pre>{JSON.stringify(APIresponse, null, 2)}</pre>
       {/* {results} */}
+      <RhymingHelp wordToRhyme="dog" />
     </>
   );
 }
