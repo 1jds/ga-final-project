@@ -1,8 +1,8 @@
 // Rhyming dictionary dependency created by Zeke Sikelianos
 
 export default function RhymingHelp(props) {
-  var rhymes = require("rhymes");
-  console.log("rhymes:", rhymes("cat"));
+    var rhymes = require("rhymes");
+    // console.log("rhymes:", rhymes("cat"));
 
   let newRhymesList = rhymes(props.wordToRhyme);
   let rhymingWordsList = newRhymesList.map((item, index) => {
