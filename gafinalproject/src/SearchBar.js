@@ -70,7 +70,7 @@ export default function SearchBar() {
 
   
   return (
-    <>
+    <div style={{border: "3px solid dodgerblue"}}>
       <p>The Search Bar goes here.</p>
       <form>
         <input
@@ -138,6 +138,6 @@ export default function SearchBar() {
       <pre>{JSON.stringify(APIresponse, null, 2)}</pre>
       {/* {results} */}
       <RhymingHelp wordToRhyme="dog" />
-    </>
+    </div>
   );
 }
