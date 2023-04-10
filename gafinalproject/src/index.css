@@ -1,13 +1,245 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Cutive&family=Special+Elite&display=swap");
+
+:root {
+  --old-type-font: "Special Elite", "Times New Roman", Times, cursive;
+  --clean-type-font: "Cutive", serif, "Times New Roman";
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.error-page--background {
+  height: 100vh;
+  background-image: url("./assets/TV-no-signal.jpg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-page--black-box {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem 3rem;
+}
+
+.error-page--black-box > * {
+  color: white;
+  font-family: var(--clean-type-font);
+  margin: 1rem 0rem;
+  text-align: center;
+}
+
+.error-page--black-box > h1 {
+  font-size: 3rem;
+}
+
+.error-page--black-box > p {
+  font-size: 2rem;
+}
+
+.error-page--black-box > a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0;
+}
+
+.error-page--black-box > a:first-of-type:hover {
+  color: yellow;
+}
+
+.error-page--black-box > a:last-of-type:hover {
+  color: #ff23e9;
+}
+
+.test-text {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin: -25px 0px;
+  padding: 0px;
+  letter-spacing: 5px;
+  font-family: var(--old-type-font);
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  /* line-height specified for Firefox compatability */
+}
+
+.test-container {
+  margin: 50px;
+  padding: 0px;
+  width: 72px;
+  height: 115px;
+  border: 2px solid red;
+}
+
+.first-letter-test {
+  color: red;
+  font-weight: bold;
+}
+
+/* BOOK COVER DESIGN INSPIRED BY https://codepen.io/Lionad/pen/XWMMNKK?editors=1000 ADAPTING SOME SHADOWS FROM HERE, BUT CLEARLY NOT AS PRO! */
+
+.test-home-page-container {
+  height: 100vh;
+  background-image: url("./assets/white-wall.jpg");
+  background-size: cover;
+}
+
+.test-home-page-container-overlay {
+  height: 100vh;
+  /* background: rgba(42,100,139,0.6); */
+  background: rgba(139, 42, 42, 0.8);
+  background: radial-gradient(
+    circle,
+    rgb(96, 107, 77, 0.6) 0%,
+    rgba(85, 92, 62, 1) 100%
+  );
+  /* background: radial-gradient(circle, rgba(102,21,21,1) 0%, rgba(132,50,58,1) 100%); */
+  /* background: radial-gradient(circle, rgba(139, 42, 42, 0.6) 0%, rgb(154, 61, 61) 100%); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.test-home-page-book-cover-area {
+  aspect-ratio: auto 1 / 1.38;
+  height: 80vh;
+  /* background-color: #ff23e9; */
+  /* background: rgb(42,100,139); */
+  background: radial-gradient(
+    circle,
+    rgb(96, 107, 77, 0.6) 0%,
+    rgba(85, 92, 62, 1) 100%
+  );
+  /* background: radial-gradient(circle, rgba(42,100,139,0.8) 0%, rgba(61,115,154,0.5) 100%); */
+  /* background: radial-gradient(circle, rgba(139, 42, 42, 0.8) 0%, rgba(154, 61, 61, 0.5) 100%); */
+  /* background-image: url("https://mgear-image.oss-cn-shanghai.aliyuncs.com/css-draw/s2709063811.jpg"); */
+  background-size: contain;
+  border-radius: 1px;
+
+  /* width: 32%;
+  max-width: 600px;
+  font-size: 0; */
+  box-shadow: -55px 40px 30px 0 rgb(0 0 0 / 10%),
+    -27px 25px 35px -5px rgb(0 0 0 / 20%), -10px 10px 15px 5px rgb(0 0 0 / 10%),
+    -12px 12px 10px 0 rgb(0 0 0 / 20%), -7px 7px 8px 0 rgb(0 0 0 / 10%),
+    -5px 5px 5px 0 rgb(0 0 0 / 20%), -2px 2px 3px 0 rgb(0 0 0 / 30%);
+  filter: drop-shadow(-20px 20px 15px rgba(0, 0, 0, 0.65));
+}
+
+/* BOOK COVER IMAGE ADAPATED FROM https://www.degruyter.com/document/cover/isbn/9780824889333/product_pages ORGINAL IMAGE https://rarebookschool.org/wp-content/uploads/2020/06/JND-Ukiyo-e-talk-image-Hiroshige.AMAM_.1950.1445.jpg*/
+
+.book-cover-image {
+  width: 100%;
+  height: 100%;
+  /* background-image: url('./assets/book-cover-img2.jpg'); */
+  background-image: url("./assets/product_pages.jpeg");
+  background-size: contain;
+  border-radius: 1px;
+  opacity: 0.8;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.book-cover-spine-line {
+  width: 95%;
+  border-left: 1px solid white;
+  opacity: 0.15;
+}
+
+.test-home-page-book-cover-area {
+  background: radial-gradient(
+    circle at 100% 0%,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  /* background: radial-gradient(ellipse at 100% 0%, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.18) 50%, rgba(255, 255, 255, 0.15) 70%, rgba(0, 0, 0, .1)) */
+}
+
+.text-box-and-button {
+  /* background-color: rgba(255, 35, 233, 0.25); */
+  position: absolute;
+  /* top: 43px; */
+  top: 7.25%;
+  /* right: 60px; */
+  right: 14%;
+  /* width: 167px;
+  height: 213px; */
+  width: 22.5vh;
+  height: 28.8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-box-and-button > * {
+  text-align: center;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+}
+
+.text-box-and-button p:first-child {
+  color: white;
+  /* font-size: 1.6rem; */
+  font-size: 3.5vh;
+  font-weight: 500;
+}
+
+.text-box-and-button p:nth-child(2) {
+  color: #e7cea5;
+  /* font-size: 1.5rem; */
+  font-size: 3.2vh;
+  margin-top: 0.75rem;
+}
+
+.author-line {
+  position: absolute;
+  /* bottom: 10px;
+  left: 60px; */
+  bottom: 1.5%;
+  left: 14%;
+  font-family: "Times New Roman", Times, serif;
+  /* font-size: 1.25rem; */
+  font-size: 2.75vh;
+  color: #e7cea5;
+}
+
+.home-page--link {
+  position: absolute;
+  width: 4.2vh;
+  height: 15.6vh;
+  bottom: 9.9vh;
+  right: 0.7vh;
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  opacity: 0;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  text-decoration: none;
+  color: #2c2c29;
+  font-weight: 900;
+  font-size: 2.75vh;
+}
+
+.home-page--link:hover,
+focus {
+  transition: 0.75s;
+  opacity: 1;
+  background: rgb(162, 88, 56);
+  background: url("./assets/home-page-link-bg.jpg");
+  box-shadow: inset 0 0 5px 2px rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
 }
