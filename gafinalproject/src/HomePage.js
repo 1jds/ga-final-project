@@ -1,5 +1,5 @@
 import SearchBar from "./SearchBar";
-import ResultsSection from "./ResultsSection";
+import ResultsSection from "./SearchResults";
 import wall from "./assets/white-wall.jpg";
 import { Link } from "react-router-dom";
 
