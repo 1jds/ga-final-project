@@ -157,7 +157,7 @@ const poetPicturesData = [
     },
     {
       "poetname": "George Gordon, Lord Byron",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Byron_1813_by_Phillips.jpg/373px-Byron_1813_by_Phillips.jpg"
     },
     {
       "poetname": "George Herbert",

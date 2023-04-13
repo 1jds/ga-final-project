@@ -10,10 +10,8 @@ import { Outlet } from "react-router";
 export default function PoemsList() {
   const [APIresponse, setAPIresponse] = useState([
     {
-      title: "Not found 404",
-      author: "Try a different search term",
-      lines: [""],
-      linecount: "0",
+      msg: "Use the search bar to find some poetry!",
+      linecount: 0,
     },
   ]);
   const [loading, setLoading] = useState(false);
@@ -35,13 +33,17 @@ export default function PoemsList() {
       })
       .then((data) => {
         if (data.status === 404 || data.status === 405) {
-          console.log("search for something else, dude!");
-          setAPIresponse(
-            "No results found. Please adjust your search parameters and try again."
+          // console.log("search for something else, dude!");
+          setAPIresponse([
+            {
+              msg: "No results found. Please adjust your search parameters and try again.",              
+              linecount: 0,
+            }
+          ]
           );
           return;
         }
-        console.log("data to set:", data);
+        // console.log("data to set:", data);
         setAPIresponse(data);
       })
       .catch((error) => {
@@ -59,7 +61,7 @@ export default function PoemsList() {
   };
 
   return (
-    <>
+    <div className="poems--container">
       <Navbar handleSearch={handleSearch} handleSearchTextInput={handleSearchTextInput} searchType={searchType} setSearchType={setSearchType} searchTerm={searchTerm} />
       
       {/* <svg
@@ -126,6 +128,6 @@ export default function PoemsList() {
       <Outlet context={APIresponse} />
 
       <Footer />
-    </>
+    </div>
   );
 }

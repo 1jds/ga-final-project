@@ -1,8 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Cutive&family=Special+Elite&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cutive&family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Special+Elite&display=swap');
 
-:root {
+  :root {
   --old-type-font: "Special Elite", "Times New Roman", Times, cursive;
   --clean-type-font: "Cutive", serif, "Times New Roman";
+  --noto-sans-font: 'Noto Sans', sans-serif;
+
+  --primary-red: #e81c23;
 }
 
 html {
@@ -14,10 +17,18 @@ body {
   padding: 0;
 }
 
-.responsive-img {
+.utility-class--inlineblock {
+  display: inline-block;
+}
+
+.utility-class--responsive-img {
   width: 100%;
   max-width: 150px;
   height: auto;
+}
+
+.poems--container {
+  font-family: var(--noto-sans-font);
 }
 
 .navbar {
@@ -40,8 +51,52 @@ body {
 
 .navbar--logo {
   max-width: 250px;
-  box-shadow: 0 0 0 2px white, 0 0 0 5px crimson, 0 0 0 7px white,
+  box-shadow: 0 0 0 2px white, 0 0 0 5px var(--primary-red), 0 0 0 7px white,
     0 0 0 9px rgba(5, 5, 5, 0.75);
+}
+
+.navbar--search-area {
+  /* border: 3px solid dodgerblue; */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  min-width: 250px;
+}
+
+.navbar--search-area > form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem
+}
+
+@media only screen and (max-width: 370px) {
+  .navbar--links-collection {
+    flex-wrap: wrap;
+  }
+  .navbar--logo {
+    max-width: 225px;
+  }
+}
+
+.search-results--back-and-forward-btns-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-results--back-and-forward-btns-container > button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: 0 0 0 1px gainsboro;
+  background-color:rgba(220, 220, 220, 0.5);
+  height: 1.5rem;
+  border-radius: 5px;
+}
+
+.search-results--back-and-forward-btns-container > button:hover, button:focus {
+  background-color: gainsboro;
 }
 
 .error-page--background {
@@ -109,11 +164,11 @@ body {
   padding: 0px;
   width: 72px;
   height: 115px;
-  border: 2px solid red;
+  border: 2px solid var(--primary-red);
 }
 
 .first-letter-test {
-  color: red;
+  color: var(--primary-red);
   font-weight: bold;
 }
 
@@ -278,14 +333,109 @@ focus {
   border-radius: 2px;
 }
 
-.footer--border {
-  border: 3px solid chartreuse;
+.footer--container {
+  margin: 0 auto;
+  max-width: 90%;
+  border-top: 1px solid var(--primary-red);
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.footer--logo {
+  max-width: 225px;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, rgba(220, 20, 60, 1) 34%, rgba(255,255,255,0) 35%, rgba(255,255,255,0) 100%);
+  /* border: 3px solid black; */
+  box-shadow: 0 0 0 1px white, 0 0 0 5px var(--primary-red);
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 700px) {
+  .footer--logo {
+    max-width: 175px;
+  }
+  .footer--container {
+    flex-direction: column-reverse;    
+  }
+  .footer--copyright {
+    flex-direction: column;
+    font-size: 0.95rem;
+  }
+}
+
+.footer--content-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;  
+}
+
+.footer-social-media-links {
+  color: var(--primary-red);
+  display: flex;
+  gap: 2rem
+}
+
+
+.footer-social-media-links > svg {
+  padding-right: 2rem;
+  /* margin-right: 2rem; */
+  font-size: 2rem;
+  border-right: 1px solid var(--primary-red)
+}
+
+.footer-social-media-links > svg:hover {
+  color: rgb(90, 90, 90);
+}
+
+.footer-social-media-links > :last-child {
+  border: none;
+}
+
+.footer--communications-links {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+.footer--communications-links > li > a {
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+}
+
+.footer--copyright {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.footer--copyright > p {
+  margin: 0.5rem 0.5rem 0.5rem 0rem;
+}
+
+.footer--problem-contact-anchor {
+  font-weight: 800;
+  color: black;
+  text-decoration: underline;
+}
+
+.footer--problem-contact-anchor:hover, .footer--communications-links > li > a:hover {
+  transition: 0.25s;
+  color: var(--primary-red);
+  text-decoration: none;
 }
 
 /* svg {
   background-color: #ff23e9;
 } */
-
 
 .search-results--container {
   display: flex;
@@ -295,7 +445,7 @@ focus {
 .search-results--container > div {
   flex: 1;
   padding: 1rem;
-  border: 1px solid aquamarine;
+  border: 1px solid gainsboro;
 }
 
 .search-results--list--button {

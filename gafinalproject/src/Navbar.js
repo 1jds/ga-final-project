@@ -1,79 +1,87 @@
 import { Link } from "react-router-dom";
 import logo from "./assets/logo.svg";
-import logo2 from "./assets/logo2.svg";
 import SearchBar from "./SearchBar";
+import SearchResults from "./SearchResults";
 
 export default function Navbar(props) {
   return (
     <div className="navbar">
-      <div
-        id="search-area"
-        style={{ border: "3px solid dodgerblue", display: "flex", gap: "1rem" }}
-      >
-        <p>The Search Bar goes here.</p>
+      <div className="navbar--search-area">
         <form>
           <div>
-            <input
-              onChange={(e) => {
-                props.setSearchType(e.target.value);
-              }}
-              type="radio"
-              id="author"
-              name="fav_language"
-              value="author"
-              checked={props.searchType === "author"}
-            />
-            <label htmlFor="author">author</label>
-
-            <input
-              onChange={(e) => {
-                props.setSearchType(e.target.value);
-              }}
-              type="radio"
-              id="title"
-              name="fav_language"
-              value="title"
-              checked={props.searchType === "title"}
-            />
-            <label htmlFor="title">title</label>
-
-            <input
-              onChange={(e) => {
-                props.setSearchType(e.target.value);
-              }}
-              type="radio"
-              id="lines"
-              name="fav_language"
-              value="lines"
-              checked={props.searchType === "lines"}
-            />
-            <label htmlFor="lines">lines</label>
-
-            <input
-              onChange={(e) => {
-                props.setSearchType(e.target.value);
-              }}
-              type="radio"
-              id="linecount"
-              name="fav_language"
-              value="linecount"
-              checked={props.searchType === "linecount"}
-            />
-            <label htmlFor="linecount">linecount</label>
+            <div className="utility-class--inlineblock">
+              <input
+                onChange={(e) => {
+                  props.setSearchType(e.target.value);
+                }}
+                type="radio"
+                id="author"
+                name="fav_language"
+                value="author"
+                checked={props.searchType === "author"}
+              />
+              <label htmlFor="author">Author</label>
+            </div>
+            <div className="utility-class--inlineblock">
+              <input
+                onChange={(e) => {
+                  props.setSearchType(e.target.value);
+                }}
+                type="radio"
+                id="title"
+                name="fav_language"
+                value="title"
+                checked={props.searchType === "title"}
+              />
+              <label htmlFor="title">Title</label>
+            </div>
+            <div className="utility-class--inlineblock">
+              <input
+                onChange={(e) => {
+                  props.setSearchType(e.target.value);
+                }}
+                type="radio"
+                id="lines"
+                name="fav_language"
+                value="lines"
+                checked={props.searchType === "lines"}
+              />
+              <label htmlFor="lines">Lines</label>
+            </div>
+            <div className="utility-class--inlineblock">
+              <input
+                onChange={(e) => {
+                  props.setSearchType(e.target.value);
+                }}
+                type="radio"
+                id="linecount"
+                name="fav_language"
+                value="linecount"
+                checked={props.searchType === "linecount"}
+              />
+              <label htmlFor="linecount">Linecount</label>
+            </div>
           </div>
-
-          <input
-            onChange={props.handleSearchTextInput}
-            value={props.searchTerm}
-            type="text"
-            placeholder="Search"
-          />
-          <button
-            onClick={props.handleSearch}
-            disabled={!props.searchType || !props.searchTerm}
-          >
-            Search
-          </button>
+          <div>
+            <input
+              onChange={props.handleSearchTextInput}
+              value={props.searchTerm}
+              type="text"
+              placeholder="Search"
+            />
+            <button
+              onClick={props.handleSearch}
+              disabled={!props.searchType || !props.searchTerm}
+            >
+              <Link
+                style={{ textDecoration: "none", color: "inherit" }}
+                to="/poems/search"
+                element={<SearchResults />}
+              >
+                Search
+              </Link>
+            </button>
+          </div>
         </form>
 
         {/* {results} */}
@@ -86,7 +94,7 @@ export default function Navbar(props) {
 
       {/* <input type="text" />
         <button>Q</button> */}
-      <div>
+      <div className="navbar--links-collection">
         <Link to="/poems/about" className="poems-page--link">
           About
         </Link>

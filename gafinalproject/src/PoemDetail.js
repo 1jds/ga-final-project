@@ -8,15 +8,15 @@ export default function PoemDetail(props) {
   console.log(poetPictureObj)
   return (
     <div>
-      <h3>{title}</h3>
+      <p>{title}</p>
       <p>{author}</p>
+          <p>linecount: {linecount}</p>
+          <img src={poetPictureObj.profilepicurl} alt={`image of ${author}`} className="utility-class--responsive-img"/>
       <p className="poem-detail--poem-text-displayed">
         {lines.map((item) => {
           return <p>{item}</p>;
         })}
       </p>
-      <p>linecount: {linecount}</p>
-      <img src={poetPictureObj.profilepicurl} alt={`image of ${author}`} className="responsive-img"/>
     </div>
   );
 }
