@@ -133,27 +133,27 @@ const poetPicturesData = [
     },
     {
       "poetname": "Emma Lazarus",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Emmalazarusengraving.jpg/343px-Emmalazarusengraving.jpg"
     },
     {
       "poetname": "Ernest Dowson",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Ernest_Dowson.jpg/345px-Ernest_Dowson.jpg"
     },
     {
       "poetname": "Eugene Field",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Eugene_Field_cph.3b08726.jpg/370px-Eugene_Field_cph.3b08726.jpg"
     },
     {
       "poetname": "Francis Thompson",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Francis_Thompson_at_19.jpg/342px-Francis_Thompson_at_19.jpg"
     },
     {
       "poetname": "Geoffrey Chaucer",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Portrait_of_Geoffrey_Chaucer_%284671380%29_%28cropped%29_02.jpg/382px-Portrait_of_Geoffrey_Chaucer_%284671380%29_%28cropped%29_02.jpg"
     },
     {
       "poetname": "George Eliot",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/George_Eliot%2C_por_Fran%C3%A7ois_D%27Albert_Durade.jpg/382px-George_Eliot%2C_por_Fran%C3%A7ois_D%27Albert_Durade.jpg"
     },
     {
       "poetname": "George Gordon, Lord Byron",
@@ -161,75 +161,75 @@ const poetPicturesData = [
     },
     {
       "poetname": "George Herbert",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/8/80/George_Herbert.jpg"
     },
     {
       "poetname": "George Meredith",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/George_Meredith_by_George_Frederic_Watts.jpg/356px-George_Meredith_by_George_Frederic_Watts.jpg"
     },
     {
       "poetname": "Gerard Manley Hopkins",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/7/72/GerardManleyHopkins.jpg"
     },
     {
       "poetname": "Helen Hunt Jackson",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/3/36/Helen_Hunt_Jackson_NYPL.jpg"
     },
     {
       "poetname": "Henry David Thoreau",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Benjamin_D._Maxham_-_Henry_David_Thoreau_-_Restored_-_greyscale_-_straightened.jpg/331px-Benjamin_D._Maxham_-_Henry_David_Thoreau_-_Restored_-_greyscale_-_straightened.jpg"
     },
     {
       "poetname": "Henry Vaughan",
-      "profilepicurl": ""
+      "profilepicurl": "https://images.gr-assets.com/authors/1397732824p8/354764.jpg"
     },
     {
       "poetname": "Henry Wadsworth Longfellow",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Henry_Wadsworth_Longfellow%2C_photographed_by_Julia_Margaret_Cameron_in_1868.jpg/347px-Henry_Wadsworth_Longfellow%2C_photographed_by_Julia_Margaret_Cameron_in_1868.jpg"
     },
     {
       "poetname": "Hugh Henry Brackenridge",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Hugh_Henry_Brackenridge_%281748_%E2%80%93_June_25%2C_1816%29_-_Gilbert_Stuart.jpg/404px-Hugh_Henry_Brackenridge_%281748_%E2%80%93_June_25%2C_1816%29_-_Gilbert_Stuart.jpg"
     },
     {
       "poetname": "Isaac Watts",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Isaac_Watts_from_NPG.jpg/395px-Isaac_Watts_from_NPG.jpg"
     },
     {
       "poetname": "James Henry Leigh Hunt",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/James_Henry_Leigh_Hunt_by_Benjamin_Robert_Haydon.jpg/394px-James_Henry_Leigh_Hunt_by_Benjamin_Robert_Haydon.jpg"
     },
     {
       "poetname": "James Thomson",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/James_Thomson_%281726%29_by_John_Vanderbank.jpg/398px-James_Thomson_%281726%29_by_John_Vanderbank.jpg"
     },
     {
       "poetname": "James Whitcomb Riley",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/James_Whitcomb_Riley%2C_1913.jpg/389px-James_Whitcomb_Riley%2C_1913.jpg"
     },
     {
       "poetname": "Jane Austen",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/CassandraAusten-JaneAusten%28c.1810%29_hires.jpg/372px-CassandraAusten-JaneAusten%28c.1810%29_hires.jpg"
     },
     {
       "poetname": "Jane Taylor",
-      "profilepicurl": ""
+      "profilepicurl": "https://images.gr-assets.com/authors/1474572499p8/15270376.jpg"
     },
     {
       "poetname": "John Clare",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/John_Clare.jpg/392px-John_Clare.jpg"
     },
     {
       "poetname": "John Donne",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/John_Donne_by_Isaac_Oliver.jpg/402px-John_Donne_by_Isaac_Oliver.jpg"
     },
     {
       "poetname": "John Dryden",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/John_Dryden_by_Sir_Godfrey_Kneller%2C_Bt.jpg/362px-John_Dryden_by_Sir_Godfrey_Kneller%2C_Bt.jpg"
     },
     {
       "poetname": "John Greenleaf Whittier",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/John_Greenleaf_Whittier_portrait.jpg/377px-John_Greenleaf_Whittier_portrait.jpg"
     },
     {
       "poetname": "John Keats",
@@ -237,79 +237,79 @@ const poetPicturesData = [
     },
     {
       "poetname": "John McCrae",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/John_McCrae_in_uniform_circa_1914.jpg/422px-John_McCrae_in_uniform_circa_1914.jpg"
     },
     {
       "poetname": "John Milton",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/John-milton.jpg/477px-John-milton.jpg"
     },
     {
       "poetname": "John Trumbull",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/John_Trumbull_painter_John_Trumbull_poet_1793.jpg/381px-John_Trumbull_painter_John_Trumbull_poet_1793.jpg"
     },
     {
       "poetname": "John Wilmot",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/John_Wilmot.jpg/387px-John_Wilmot.jpg"
     },
     {
       "poetname": "Jonathan Swift",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Jonathan_Swift_by_Charles_Jervas_detail.jpg/427px-Jonathan_Swift_by_Charles_Jervas_detail.jpg"
     },
     {
       "poetname": "Joseph Warton",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/1/18/Joseph_Warton.jpg"
     },
     {
       "poetname": "Joyce Kilmer",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Kilmer_1908_columbia_yearbook_picture.png"
     },
     {
       "poetname": "Julia Ward Howe",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/JuliaWardHowe_2_%28cropped%29.jpg"
     },
     {
       "poetname": "Jupiter Hammon",
-      "profilepicurl": ""
+      "profilepicurl": "https://sites.google.com/site/portfolioforpoets/_/rsrc/1522433558208/jupiter-hammon/4BB9D494-0C84-4B9A-A682-93C46B334DE6.jpeg"
     },
     {
       "poetname": "Katherine Philips",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Katherine_Philips.jpg/381px-Katherine_Philips.jpg"
     },
     {
       "poetname": "Lady Mary Chudleigh",
-      "profilepicurl": ""
+      "profilepicurl": "https://mypoeticside.com/wp-content/uploads/2017/12/chudleigh.png"
     },
     {
       "poetname": "Lewis Carroll",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/LewisCarrollSelfPhoto.jpg/339px-LewisCarrollSelfPhoto.jpg"
     },
     {
       "poetname": "Lord Alfred Tennyson",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Elliott_%26_Fry_-_Alfred%2C_Lord_Tennyson_%28cropped%29.jpg/415px-Elliott_%26_Fry_-_Alfred%2C_Lord_Tennyson_%28cropped%29.jpg"
     },
     {
       "poetname": "Louisa May Alcott",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Louisa_May_Alcott%2C_c._1870_-_Warren%27s_Portraits%2C_Boston.jpg/295px-Louisa_May_Alcott%2C_c._1870_-_Warren%27s_Portraits%2C_Boston.jpg"
     },
     {
       "poetname": "Major Henry Livingston, Jr.",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/6/66/Henry_Livingston_Jr.jpg"
     },
     {
       "poetname": "Mark Twain",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Mark_Twain_by_AF_Bradley.jpg/342px-Mark_Twain_by_AF_Bradley.jpg"
     },
     {
       "poetname": "Mary Elizabeth Coleridge",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Mary_Elizabeth_Coleridge.jpg/266px-Mary_Elizabeth_Coleridge.jpg"
     },
     {
       "poetname": "Matthew Arnold",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Matthew_Arnold.jpg/472px-Matthew_Arnold.jpg"
     },
     {
       "poetname": "Matthew Prior",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Matthew_Prior_by_Thomas_Hudson.jpg/404px-Matthew_Prior_by_Thomas_Hudson.jpg"
     },
     {
       "poetname": "Michael Drayton",

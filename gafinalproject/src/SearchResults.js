@@ -16,6 +16,7 @@ export default function SearchResults(props) {
     resultsList = contextProps.map(({ author, title }, index) => {
       return (
         <button
+          key={`${author.slice(0,3)}${title.slice(0,3)}${index}`}
           onClick={() => handleSelect(index)}
           className="search-results--list--button"
           title="read poem"
