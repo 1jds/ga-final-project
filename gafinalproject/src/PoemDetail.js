@@ -32,7 +32,7 @@ export default function PoemDetail(props) {
           return <p>{item}</p>;
         })}
       </p>
-      <button onClick={() => handleFavourited(props.selectedPoemDetails)}>
+      <button onClick={() => {handleFavourited(props.selectedPoemDetails); props.clearSelectedPoemDetails()}}>
         {alreadyFaved ? "Remove from Faves" : "Add to Faves"}
       </button>
     </div>

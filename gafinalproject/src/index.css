@@ -167,6 +167,25 @@ body {
 
 /* SEARCH RESULTS COMPONENT START */
 
+.search-results--container {
+  display: flex;
+  padding: 1rem;
+}
+
+.search-results--container > div {
+  flex: 1;
+  padding: 1rem;
+}
+.search-results--container > div:first-child {
+  border-right: 1px solid gainsboro;
+}
+
+.search-results--list--button {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0.5rem;
+}
+
 .search-results--back-and-forward-btns-container {
   display: flex;
   align-items: center;
@@ -531,23 +550,6 @@ focus {
   background-color: #ff23e9;
 } */
 
-.search-results--container {
-  display: flex;
-  padding: 1rem;
-}
-
-.search-results--container > div {
-  flex: 1;
-  padding: 1rem;
-  border: 1px solid gainsboro;
-}
-
-.search-results--list--button {
-  display: flex;
-  gap: 1rem;
-  margin: 1rem 0.5rem;
-}
-
 .poem-detail--poem-text-displayed > p {
   margin: 0.15rem 0rem;
   padding: 0;
@@ -616,3 +618,77 @@ focus {
 
 /* ABOUT PAGE END */
 
+
+/* FAVOURITES PAGE START */
+.favourites-page--container {
+  display: flex;
+  padding: 1rem;
+  min-height: 40vh;
+}
+
+.favourites-page--container > div {
+  flex: 1;
+  padding: 1rem;
+}
+.favourites-page--container > div:first-child {
+  border-right: 1px solid gainsboro;
+}
+
+.favourites-page--favourites-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.favourites-page--favourites-item-container {
+  display: flex;
+  /* align-items: center; */
+  gap: 0.75rem;
+  /* background-color: aquamarine; */
+  border-left: 3px solid var(--primary-red);
+  padding: 0rem 0.75rem;
+  /* grid-template-columns: 1fr 2rem; */
+}
+
+.favourites-page--favourites-list-item-container > span {
+  /* vertical-align: middle; */
+  margin-right: 0.75rem;
+}
+
+.favourites-page--favourites-list-item {
+  /* height: 2rem; */
+  /* max-height: 1rem; */
+  padding: 0;
+  margin: 0;
+  border: none;
+  /* background: pink; */
+  /* background-color: aquamarine; */
+  font-size: 1.15rem;
+  background-color: inherit;
+}
+
+.favourites-page--favourites-list-item-btn {
+  /* height: 2rem; */
+  /* max-height: 1.25rem; */
+  padding: 0;
+  margin: 0;
+  border: none;
+  /* background: pink; */
+  background-color: inherit;
+}
+
+.material-icons--delete-favourite {
+ /* background-color: #ff23e9;
+  display: flex;
+  align-items: center;
+  justify-content: center; */
+  vertical-align: middle;
+  background-color: inherit;
+}
+
+.material-icons--delete-favourite:hover {
+  color: var(--primary-red);
+  cursor: pointer;
+}
+
+/* FAVOURITES PAGE END */

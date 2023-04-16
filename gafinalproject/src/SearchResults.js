@@ -7,7 +7,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 export default function SearchResults(props) {
   const contextProps = useOutletContext();
-  console.log("Context Props Equals...", contextProps);
+  // console.log("Context Props Equals...", contextProps);
   const numberOfResultsPages = Math.ceil(contextProps.length / 20);
   let resultsList = [];
   if (contextProps[0].msg) {
@@ -42,6 +42,9 @@ export default function SearchResults(props) {
   const firstIndex = lastIndex - 20;
 
   console.log("results list just before render", resultsList);
+
+  const clearSelectedPoemDetails = () => {       
+}
 
   return (
     <>
@@ -88,7 +91,7 @@ export default function SearchResults(props) {
         <div>
           <p>Poem Details</p>
           {selectedPoemDetails ? (
-            <PoemDetail selectedPoemDetails={selectedPoemDetails} />
+            <PoemDetail clearSelectedPoemDetails={clearSelectedPoemDetails} selectedPoemDetails={selectedPoemDetails} />
           ) : (
             <p>No poem selected...</p>
           )}
