@@ -1,11 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Cutive&family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cutive&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Special+Elite&display=swap');
 
   :root {
   --old-type-font: "Special Elite", "Times New Roman", Times, cursive;
   --clean-type-font: "Cutive", serif, "Times New Roman";
   --noto-sans-font: 'Noto Sans', sans-serif;
+  --eb-garamond-font: 'EB Garamond', "Times New Roman", serif;
 
   --primary-red: #e81c23;
+  --theme-light-bg-color: white;
+  --theme-dark-bg-color: black;
 }
 
 html {
@@ -15,6 +18,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--theme-light-bg-color);
 }
 
 .utility-class--inlineblock {
@@ -31,6 +35,7 @@ body {
   font-family: var(--noto-sans-font);
 }
 
+/* NAVBAR START */
 .navbar {
   /* border: 1px solid blueviolet; */
   position: sticky;
@@ -43,21 +48,49 @@ body {
   padding: 1.15rem;
   box-shadow: 0 0 10px 3px rgba(0,0,0,.4);
   /* margin-bottom: 1rem; */
-  background: white;
+  background: inherit;
 }
 
 .navbar > div {
   flex: 1;
   /* background-color: bisque; */
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
+}
+
+.navbar--light-dark-theme-toggle {
+  position: fixed;
+  top: 0;
+  left: 6px;
+  padding: 3px 3px 0px 3px;
+  border: 1px solid #aeaeae;
+  border-top: none;
+  border-radius: 0px 0px 50% 50%;
+}
+
+.navbar--theme-icon-light-mode {
+  background: #f1f1f1;
+  color: rgba(5, 5, 5, 0.75);
+}
+
+.navbar--theme-icon-dark-mode {
+  color: #fff5bc;  
+  background: rgb(83, 83, 83, 0.8);
+}
+
+.navbar--light-dark-theme-toggle:hover {
+  border: 1px solid var(--primary-red);
+  border-top: none;
+  cursor: pointer;
 }
 
 .navbar--logo {
   max-width: 225px;
   box-shadow: 0 0 0 2px white, 0 0 0 5px var(--primary-red), 0 0 0 7px white,
     0 0 0 9px rgba(5, 5, 5, 0.75);
+  margin: 0px 15px;
 }
 
 .navbar--search-area {
@@ -75,6 +108,40 @@ body {
   gap: 0.5rem
 }
 
+
+.search-area--search-input-area {
+  margin: 0;
+  border: 1px solid #aeaeae;
+  /* border: 1px solid var(--primary-red); */
+  background-color: #f1f1f1;
+  height: 36px;
+  box-sizing: border-box;
+  cursor: text;
+  border-radius: 2px 0px 0px 2px;
+  padding: 2px 13px;
+  transition: background-color .25s cubic-bezier(.215,.61,.355,1),border-color .25s cubic-bezier(.215,.61,.355,1);
+  font-size: 1.1rem;
+}
+
+.search-area--search-input-area:hover, .search-area--search-input-area:focus, .search-area--search-input-area:focus-visible {
+  border: 1px solid var(--primary-red);
+  background-color: white;  
+  outline: none;
+}
+
+.search-area--search-button {
+  margin: 0;
+  border: 1px solid var(--primary-red);
+  background-color: var(--primary-red);
+  color: white;
+  height: 36px;
+  width: 36px;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 0px 50% 50% 0px;
+  padding: 3px 0 0;    
+}
+
 @media only screen and (max-width: 390px) {
   .navbar--links-collection {
     flex-wrap: wrap;
@@ -83,6 +150,22 @@ body {
     max-width: 200px;
   }
 }
+
+.navbar--link {
+  text-decoration: none;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  color: inherit;
+  font-weight: 400;
+}
+
+.navbar--link:hover {
+  color: var(--primary-red)
+}
+/* NAVBAR END */
+
+/* SEARCH RESULTS COMPONENT START */
 
 .search-results--back-and-forward-btns-container {
   display: flex;
@@ -103,6 +186,10 @@ body {
 .search-results--back-and-forward-btns-container > button:hover, button:focus {
   background-color: gainsboro;
 }
+
+/* SEARCH RESULTS COMPONENT END */
+
+/* ERROR PAGE START */
 
 .error-page--background {
   height: 100vh;
@@ -151,6 +238,8 @@ body {
 .error-page--black-box > a:last-of-type:hover {
   color: #ff23e9;
 }
+
+/* ERROR PAGE END */
 
 .test-text {
   writing-mode: vertical-rl;
@@ -412,7 +501,7 @@ focus {
   letter-spacing: 0.5px;
   text-decoration: none;
   text-transform: uppercase;
-  color: black;
+  color: inherit;
 }
 
 .footer--copyright {
@@ -428,7 +517,7 @@ focus {
 
 .footer--problem-contact-anchor {
   font-weight: 800;
-  color: black;
+  color: inherit;
   text-decoration: underline;
 }
 
@@ -468,3 +557,62 @@ focus {
 .learn-page--wikipedia-html-text-div > p {
   margin-top: 0px;
 }
+
+/* ABOUT PAGE START */
+.about-page--container {
+  padding: 1rem 2rem;
+}
+
+.about-page--container > h2 {
+  font-size: 3.25rem;
+  font-family: var(--eb-garamond-font);
+}
+
+.about-page--hero-img {
+  width: 100%;
+}
+
+.about-page--image-caption-text {
+  text-align: end;
+  font-family: var(--eb-garamond-font);
+  font-size: 1.65rem;
+  font-style: italic;
+  margin: 0rem 0rem 4rem 0rem;
+}
+
+.about-page--history-info-container {
+  /* border-top: 1px solid gainsboro; */
+  border-top: 1px solid var(--primary-red);
+  display: flex;
+  gap: 2rem;
+  max-width: 80%;
+}
+
+.about-page--history-info-container > div:first-child {
+  /* border-top: 7px solid gainsboro; */
+  border-top: 7px solid var(--primary-red);
+  min-width: 200px;
+}
+
+.about-page--history-info-container > div:first-child > p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.about-page--history-info-container > div:last-child > h3 {
+  font-family: var(--eb-garamond-font);
+  font-weight: 800;
+  font-size: 2rem;
+  margin: 0.75rem 0rem 0rem 0rem;
+}
+
+.about-page--history-info-container > div:last-child > p {
+  font-family: var(--eb-garamond-font);
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin: 0.75rem 0rem;
+}
+
+/* ABOUT PAGE END */
+

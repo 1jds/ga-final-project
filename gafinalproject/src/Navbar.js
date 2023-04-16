@@ -1,15 +1,48 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "./assets/logo.svg";
+import navLogoDark from "./assets/nav_logo_dark_theme.svg";
+import navLogoLight from "./assets/nav_logo_light_theme.svg";
 import SearchBar from "./SearchBar";
 import SearchResults from "./SearchResults";
+import SearchIcon from "@mui/icons-material/Search";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import Badge from '@mui/material/Badge'
 
 export default function Navbar(props) {
   return (
     <div className="navbar">
+      <div
+        className={
+          props.isDarkMode
+            ? "navbar--light-dark-theme-toggle navbar--theme-icon-dark-mode"
+            : "navbar--light-dark-theme-toggle navbar--theme-icon-light-mode"
+        }
+      >
+        {props.isDarkMode ? (
+          <div
+            role="button"
+            onClick={() => {
+              props.setIsDarkMode((prevState) => !prevState);
+            }}
+          >
+            <DarkModeIcon />
+          </div>
+        ) : (
+          <div
+            role="button"
+            onClick={() => {
+              props.setIsDarkMode((prevState) => !prevState);
+            }}
+          >
+            <LightModeIcon />
+          </div>
+        )}
+      </div>
       <div className="navbar--search-area">
         <form>
           <div>
-            <div className="utility-class--inlineblock">
+            <div className="utility-class--inlineblock" title="Search by an author's first or last name">
               <input
                 onChange={(e) => {
                   props.setSearchType(e.target.value);
@@ -19,10 +52,11 @@ export default function Navbar(props) {
                 name="fav_language"
                 value="author"
                 checked={props.searchType === "author"}
+                title="Search by an author's first or last name"
               />
               <label htmlFor="author">Author</label>
             </div>
-            <div className="utility-class--inlineblock">
+            <div className="utility-class--inlineblock" title="Search for a poem by title">
               <input
                 onChange={(e) => {
                   props.setSearchType(e.target.value);
@@ -35,7 +69,7 @@ export default function Navbar(props) {
               />
               <label htmlFor="title">Title</label>
             </div>
-            <div className="utility-class--inlineblock">
+            <div className="utility-class--inlineblock" title="Search by a certain line of poetry">
               <input
                 onChange={(e) => {
                   props.setSearchType(e.target.value);
@@ -48,7 +82,7 @@ export default function Navbar(props) {
               />
               <label htmlFor="lines">Lines</label>
             </div>
-            <div className="utility-class--inlineblock">
+            <div className="utility-class--inlineblock" title="Search for poems of a certain line length">
               <input
                 onChange={(e) => {
                   props.setSearchType(e.target.value);
@@ -62,14 +96,16 @@ export default function Navbar(props) {
               <label htmlFor="linecount">Linecount</label>
             </div>
           </div>
-          <div>
+          <div style={{ display: "flex" }}>
             <input
+              className="search-area--search-input-area"
               onChange={props.handleSearchTextInput}
               value={props.searchTerm}
               type="text"
-              placeholder="Search"
+              placeholder="Search by..."
             />
             <button
+              className="search-area--search-button"
               onClick={props.handleSearch}
               disabled={!props.searchType || !props.searchTerm}
             >
@@ -78,7 +114,7 @@ export default function Navbar(props) {
                 to="/poems/search"
                 element={<SearchResults />}
               >
-                Search
+                <SearchIcon />
               </Link>
             </button>
           </div>
@@ -89,27 +125,35 @@ export default function Navbar(props) {
       </div>
 
       <div>
-        <img src={logo} className="navbar--logo" />
+      <Link className="navbar--link" to="/">
+        <img
+          src={props.isDarkMode ? navLogoDark : navLogoLight}
+          className="navbar--logo"
+        />
+      </Link>
       </div>
 
       {/* <input type="text" />
         <button>Q</button> */}
       <div className="navbar--links-collection">
-        <Link to="/poems/about" className="poems-page--link">
+        <Link className="navbar--link" to="/poems/about">
           About
         </Link>
-        <Link to="/poems/newsletter" className="poems-page--link">
+        <Link className="navbar--link" to="/poems/newsletter">
           Newsletter
         </Link>
-        <Link to="/poems/learn" className="poems-page--link">
+        <Link className="navbar--link" to="/poems/learn">
           Learn
         </Link>
-        <Link to="/poems/create" className="poems-page--link">
+        <Link className="navbar--link" to="/poems/create">
           Create
         </Link>
-        <Link to="/poems/favourites" className="poems-page--link">
-          Favourites
+
+          <Badge badgeContent={props.favouritesCount} color="error">
+        <Link className="navbar--link" to="/poems/favourites">
+            Favourites
         </Link>
+          </Badge>          
       </div>
       {/* 
       <div className="sort-and-search">

@@ -42,6 +42,7 @@ export default function SearchResults(props) {
   const firstIndex = lastIndex - 20;
 
   console.log("results list just before render", resultsList);
+
   return (
     <>
       <div className="search-results--container">

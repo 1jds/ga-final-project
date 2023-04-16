@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import logo2 from "./assets/logo2.svg";
+import footerLogoDark from './assets/footer_logo_dark_theme.svg';
+import footerLogoLight from './assets/footer_logo_light_theme.svg';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -7,10 +8,10 @@ import PinterestIcon from '@mui/icons-material/Pinterest';
 import TelegramIcon from '@mui/icons-material/Telegram';
 
 
-export default function Footer() {
+export default function Footer(props) {
   return (
     <div className="footer--container">
-      <img src={logo2} className="footer--logo" />
+      <img src={props.isDarkMode ? footerLogoDark : footerLogoLight} className="footer--logo" />
       <div className="footer--content-container">
         <div className="footer-social-media-links">
             <FacebookIcon />
