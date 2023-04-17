@@ -1,33 +1,62 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
-import SearchBar from "./SearchBar";
 import Footer from "./Footer";
-import logo from './assets/logo.svg'
-import logo2 from './assets/logo2.svg'
 import { Outlet } from "react-router";
+import { createContext } from "react";
+import SearchResults from "./SearchResults";
+import { useNavigate } from 'react-router-dom'
 
 
-export default function PoemsList() {
+export const FavesContext = createContext();
+
+export default function PoemsList() {  
   const [APIresponse, setAPIresponse] = useState([
     {
-      title: "Not found 404",
-      author: "Try a different search term",
-      lines: [""],
-      linecount: "0",
+      msg: "Use the search bar to find some poetry!",
+      linecount: 0,
     },
   ]);
+  const [isFirstRender, setIsFirstRender] = useState(true);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [searchType, setSearchType] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
-  const test = {hello: "world number 2!!"}
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [favouritesCount, setFavouritesCount] = useState(0);
+  const [favesList, setFavesList] = useState([]);
+  const navigate = useNavigate()
+
+  useEffect(() => {
+  // alert("Getting local storage!")
+    const locallySavedFavesList = JSON.parse(localStorage.getItem('favouritedpoems'));
+    const locallySavedFavesCount = JSON.parse(localStorage.getItem('favouritedpoemscount'))
+  if (locallySavedFavesList) {
+    setFavesList(locallySavedFavesList);
+    setFavouritesCount(locallySavedFavesCount);
+  }
+}, [])
+
+useEffect(() => {
+  if(isFirstRender) {
+    setIsFirstRender(false)
+  } else if(!isFirstRender) {
+    // alert("Setting local storage!")
+    localStorage.setItem('favouritedpoems', JSON.stringify(favesList));
+    localStorage.setItem('favouritedpoemscount', JSON.stringify(favouritesCount))
+  }
+}, [favesList])
+
+// useEffect(() => {
+//   alert("MOUNTED");
+//   return () => alert("UNMOUNTED");
+// }, [navigate]);
 
   const handleSearch = (e) => {
     e.preventDefault();
 
     fetch(`https://poetrydb.org/${searchType}/${searchTerm}`)
       .then((response) => {
-        console.log(response.status);
+        // console.log(response.status);
         if (response.status === 200) {
           return response.json();
         }
@@ -35,13 +64,16 @@ export default function PoemsList() {
       })
       .then((data) => {
         if (data.status === 404 || data.status === 405) {
-          console.log("search for something else, dude!");
-          setAPIresponse(
-            "No results found. Please adjust your search parameters and try again."
-          );
+          // console.log("search for something else, dude!");
+          setAPIresponse([
+            {
+              msg: "No results found. Please adjust your search parameters and try again.",
+              linecount: 0,
+            },
+          ]);
           return;
         }
-        console.log("data to set:", data);
+        // console.log("data to set:", data);
         setAPIresponse(data);
       })
       .catch((error) => {
@@ -58,11 +90,49 @@ export default function PoemsList() {
     setSearchTerm(searchWords);
   };
 
+  // const handleFaves = (e) => {
+
+  // }
+
+  // --theme-light-bg-color: white;
+  // --theme-dark-bg-color: rgba(5, 5, 5, 0.75);
+  function handleFavourited(poemInfo) {
+    const sometestResult = favesList.some(
+      (element) => element.title === poemInfo.title
+    );
+    if (sometestResult) {
+      setFavesList((prevState) => [
+        ...prevState.filter((item) => item.title !== poemInfo.title),
+      ]);
+      setFavouritesCount((prevState) => prevState - 1);
+    } else if (!sometestResult) {
+      setFavesList((prevState) => [...prevState, poemInfo]);
+      setFavouritesCount((prevState) => prevState + 1);
+    }
+  }
+
   return (
-    <>
-      <Navbar handleSearch={handleSearch} handleSearchTextInput={handleSearchTextInput} searchType={searchType} setSearchType={setSearchType} searchTerm={searchTerm} />
-      
-      {/* <svg
+    <FavesContext.Provider value={{ favesList, handleFavourited }}>
+      <div
+        style={
+          isDarkMode
+            ? { backgroundColor: "var(--theme-dark-bg-color)", color: "white" }
+            : { backgroundColor: "var(--theme-light-bg-color)" }
+        }
+        className="poems--container"
+      >
+        <Navbar
+          favouritesCount={favouritesCount}
+          isDarkMode={isDarkMode}
+          setIsDarkMode={setIsDarkMode}
+          handleSearch={handleSearch}
+          handleSearchTextInput={handleSearchTextInput}
+          searchType={searchType}
+          setSearchType={setSearchType}
+          searchTerm={searchTerm}
+        />
+
+        {/* <svg
         width="212.55"
         height="45.9389217653227"
         viewBox="0 0 434.7337123414027 93.96000000000001"
@@ -118,14 +188,14 @@ export default function PoemsList() {
           <span className="first-letter-test">T</span>he
         </p>
       </div> */}
-      {/* <div style={{ border: "3px solid yellow" }}>
+        {/* <div style={{ border: "3px solid yellow" }}>
         <SearchBar />
       </div> */}
-      {/* <pre>{JSON.stringify(APIresponse, null, 2)}</pre> */}
+        {/* <pre>{JSON.stringify(APIresponse, null, 2)}</pre> */}
 
-      <Outlet context={APIresponse} />
-
-      <Footer />
-    </>
+        <Outlet context={{APIresponse, isDarkMode}} />
+        <Footer isDarkMode={isDarkMode} />
+      </div>
+    </FavesContext.Provider>
   );
 }

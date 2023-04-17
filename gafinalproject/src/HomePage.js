@@ -1,6 +1,3 @@
-import SearchBar from "./SearchBar";
-import ResultsSection from "./SearchResults";
-import wall from "./assets/white-wall.jpg";
 import { Link } from "react-router-dom";
 
 export default function HomePage() {
@@ -26,7 +23,9 @@ export default function HomePage() {
               </p>
             </div>
             <p className="author-line">Design by James</p>
-            <Link to="/poems" className="home-page--link">ENTER</Link>
+            <Link to="/poems" className="home-page--link">
+              ENTER
+            </Link>
             <div className="book-cover-spine-line"></div>
           </div>
         </div>

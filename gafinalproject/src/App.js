@@ -16,15 +16,16 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/poems" element={<Poems />}>
-        <Route path="/poems/search" element={<SearchResults />} />
+        <Route index element={<About />} />
         <Route path="/poems/about" element={<About />} />
+        <Route path="/poems/search" element={<SearchResults />} />
         <Route path="/poems/newsletter" element={<Newsletter />} />
         <Route path="/poems/learn" element={<Learn />} />
         <Route path="/poems/create" element={<Create />} />
         <Route path="/poems/favourites" element={<Favourites />} />
       </Route>
       <Route path="*" element={<ErrorPage />} />
-    </Routes>
+    </Routes>    
   );
 }
 
