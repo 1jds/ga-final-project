@@ -1,39 +1,92 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { FavesContext } from "./Poems";
 import { useOutletContext } from "react-router";
 import PoemDetail from "./PoemDetail";
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
+import IndeterminateCheckBoxOutlinedIcon from '@mui/icons-material/IndeterminateCheckBoxOutlined';
 
 export default function SearchResults(props) {
-  const contextProps = useOutletContext();
-  // console.log("Context Props Equals...", contextProps);
-  const numberOfResultsPages = Math.ceil(contextProps.length / 20);
+  const { favesList, handleFavourited } = useContext(FavesContext);
+  const outletContextProps = useOutletContext();
+  console.log("Context Props Equals...", outletContextProps);
+  const numberOfResultsPages = Math.ceil(outletContextProps.APIresponse.length / 20);
   let resultsList = [];
-  if (contextProps[0].msg) {
-    resultsList = [contextProps[0].msg];
+  if (outletContextProps.APIresponse[0].msg) {
+    resultsList = [outletContextProps.APIresponse[0].msg];
   } else {
-    resultsList = contextProps.map(({ author, title }, index) => {
-      return (
-        <button
-          key={`${author.slice(0,3)}${title.slice(0,3)}${index}`}
-          onClick={() => handleSelect(index)}
-          className="search-results--list--button"
-          title="read poem"
-          aria-label="display details of this poem"
-        >
-          <span>
-            <strong>{author}</strong>
-          </span>
-          <span>{title.length < 50 ? title : `${title.slice(0, 50)}...`}</span>
-        </button>
-      );
-    });
+    resultsList = outletContextProps.APIresponse.map(
+      ({ author, title, linecount, lines }, index) => {
+        const isThisItemInFaves = favesList.some(
+          (element) => element.title === title
+        );        
+
+        return (
+          <div className="favourites-page--favourites-item-container">
+            <span className="favourites-page--favourites-list-item">
+              <strong>{author}</strong>
+            </span>
+            <span className="favourites-page--favourites-list-item">
+              {title.length < 35 ? title : `${title.slice(0, 35)}...`}
+            </span>
+            <button
+              className="favourites-page--favourites-list-item"
+              key={`${author.slice(0, 3)}${title.slice(0, 3)}${index}`}
+              onClick={() => handleSelect(index)}
+              title="read poem"
+              aria-label="display details of this poem"
+            >
+              <OpenInNewIcon
+                className={
+                  outletContextProps.isDarkMode
+                    ? "favourites-page--material-icons favourites-page--material-icons-dark-mode"
+                    : "favourites-page--material-icons"
+                }
+              />
+            </button>
+            <button
+              className="favourites-page--favourites-list-item-btn"
+              onClick={() => {
+                handleFavourited({ author, linecount, lines, title });
+              }}
+              title="add poem to favourites"
+              aria-label="add this poem to your favourites"
+            >
+              {isThisItemInFaves ? <IndeterminateCheckBoxOutlinedIcon className={
+                  outletContextProps.isDarkMode
+                    ? "favourites-page--material-icons favourites-page--material-icons-dark-mode"
+                    : "favourites-page--material-icons"
+                } /> : <AddBoxOutlinedIcon
+                className={
+                  outletContextProps.isDarkMode
+                    ? "favourites-page--material-icons favourites-page--material-icons-dark-mode"
+                    : "favourites-page--material-icons"
+                }
+              />}
+            </button>
+          </div>
+          // <button
+          //   key={`${author.slice(0,3)}${title.slice(0,3)}${index}`}
+          //   onClick={() => handleSelect(index)}
+          //   className="search-results--list--button"
+          //   title="read poem"
+          //   aria-label="display details of this poem"
+          // >
+          //   <span>
+          //     <strong>{author}</strong>
+          //   </span>
+          //   <span>{title.length < 50 ? title : `${title.slice(0, 50)}...`}</span>
+          // </button>
+        );
+      }
+    );
   }
   const [selectedPoemDetails, setSelectedPoemDetails] = useState();
 
   const handleSelect = (index) => {
-    let poemSelected = contextProps[index];
+    let poemSelected = outletContextProps.APIresponse[index];
     setSelectedPoemDetails(poemSelected);
   };
 
@@ -43,19 +96,16 @@ export default function SearchResults(props) {
 
   console.log("results list just before render", resultsList);
 
-  const clearSelectedPoemDetails = () => {       
-}
+  const clearSelectedPoemDetails = () => {};
 
   return (
     <>
       <div className="search-results--container">
         <div>
-          <p>Search Results</p>
-          {/* <p>
-            <strong>TITLE: {props.title}</strong>
-          </p>
-          <p>AUTHOR: {props.author}</p>
-          <p>LINES: {props.lines}</p> */}
+          <div className="favourites-page--favourites-list-container">
+            <h3>Search Results</h3>
+            {resultsList.slice(firstIndex, lastIndex)}
+          </div>
           <div className="search-results--back-and-forward-btns-container">
             <button
               onClick={() =>
@@ -64,7 +114,11 @@ export default function SearchResults(props) {
                 })
               }
             >
-              <ChevronLeftIcon />
+              <ChevronLeftIcon className={
+                  outletContextProps.isDarkMode
+                    ? "search-results--back-and-forward-btns-dark-theme"
+                    : ""
+                } />
             </button>
             <p>
               Page {currentPageofResults} of {numberOfResultsPages}
@@ -78,7 +132,11 @@ export default function SearchResults(props) {
                 })
               }
             >
-              <ChevronRightIcon />
+              <ChevronRightIcon className={
+                  outletContextProps.isDarkMode
+                    ? "search-results--back-and-forward-btns-dark-theme"
+                    : ""
+                } />
             </button>
           </div>
           {/* {contextProps ? (
@@ -86,14 +144,16 @@ export default function SearchResults(props) {
           ) : (
             <></>
           )} */}
-          {resultsList.slice(firstIndex, lastIndex)}
+          {/* {resultsList.slice(firstIndex, lastIndex)} */}
         </div>
         <div>
-          <p>Poem Details</p>
           {selectedPoemDetails ? (
-            <PoemDetail clearSelectedPoemDetails={clearSelectedPoemDetails} selectedPoemDetails={selectedPoemDetails} />
+            <PoemDetail
+              clearSelectedPoemDetails={clearSelectedPoemDetails}
+              selectedPoemDetails={selectedPoemDetails}
+            />
           ) : (
-            <p>No poem selected...</p>
+            <p className="details-component-placeholder-text">Select a poem to view more information...</p>
           )}
         </div>
       </div>

@@ -1,10 +1,12 @@
 import { useContext, useState } from "react";
 import { FavesContext } from "./Poems";
 import PoemDetail from "./PoemDetail";
-import CancelPresentationIcon from "@mui/icons-material/CancelPresentation";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import IndeterminateCheckBoxOutlinedIcon from '@mui/icons-material/IndeterminateCheckBoxOutlined';
+import { useOutletContext } from "react-router";
 
 export default function Favourites() {
+  const outletContextProps = useOutletContext();
   const { favesList, handleFavourited } = useContext(FavesContext);
   let favouritesList = [];
   if (favesList.length === 0) {
@@ -21,13 +23,13 @@ export default function Favourites() {
               {title.length < 35 ? title : `${title.slice(0, 35)}...`}
             </span>
             <button
-              className="favourites-page--favourites-list-item"
+              className="favourites-page--favourites-list-item-btn"
               key={`${author.slice(0, 3)}${title.slice(0, 3)}${index}`}
               onClick={() => handleSelect(index)}
               title="read poem"
               aria-label="display details of this poem"
             >
-              <OpenInNewIcon className="material-icons--delete-favourite" />
+              <OpenInNewIcon className={outletContextProps.isDarkMode ? "favourites-page--material-icons favourites-page--material-icons-dark-mode" : "favourites-page--material-icons"} />
             </button>
             <button
               className="favourites-page--favourites-list-item-btn"
@@ -38,7 +40,7 @@ export default function Favourites() {
               title="remove poem from favourites"
               aria-label="remove this poem from favourites"
             >
-              <CancelPresentationIcon className="material-icons--delete-favourite" />
+              <IndeterminateCheckBoxOutlinedIcon className={outletContextProps.isDarkMode ? "favourites-page--material-icons favourites-page--material-icons-dark-mode" : "favourites-page--material-icons"} />
             </button>
           </div>
         );
@@ -82,14 +84,13 @@ export default function Favourites() {
           {favouritesList}
         </div>
         <div>
-          <p>Poem Details</p>
           {selectedPoemDetails ? (
             <PoemDetail
               clearSelectedPoemDetails={clearSelectedPoemDetails}
               selectedPoemDetails={selectedPoemDetails}
             />
           ) : (
-            <p>No poem selected...</p>
+            <p className="details-component-placeholder-text">Select a poem to view more information...</p>
           )}
         </div>
       </div>

@@ -56,7 +56,7 @@ useEffect(() => {
 
     fetch(`https://poetrydb.org/${searchType}/${searchTerm}`)
       .then((response) => {
-        console.log(response.status);
+        // console.log(response.status);
         if (response.status === 200) {
           return response.json();
         }
@@ -193,7 +193,7 @@ useEffect(() => {
       </div> */}
         {/* <pre>{JSON.stringify(APIresponse, null, 2)}</pre> */}
 
-        <Outlet context={APIresponse} />
+        <Outlet context={{APIresponse, isDarkMode}} />
         <Footer isDarkMode={isDarkMode} />
       </div>
     </FavesContext.Provider>

@@ -46,7 +46,8 @@ body {
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1.15rem;
-  box-shadow: 0 0 10px 3px rgba(0,0,0,.4);
+  box-shadow: 0 0 10px 3px rgba(0,0,0,.4); 
+  border-bottom: 1px dashed rgba(220, 220, 220, 0.25);
   /* margin-bottom: 1rem; */
   background: inherit;
 }
@@ -189,7 +190,10 @@ body {
 .search-results--back-and-forward-btns-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
+  margin-top: 1rem;
+  /* background-color: pink; */
 }
 
 .search-results--back-and-forward-btns-container > button {
@@ -198,11 +202,22 @@ body {
   border: none;
   box-shadow: 0 0 0 1px gainsboro;
   background-color:rgba(220, 220, 220, 0.5);
-  height: 1.5rem;
   border-radius: 5px;
 }
 
+.search-results--back-and-forward-btns-container > button > * {
+  vertical-align: middle;
+}
+
 .search-results--back-and-forward-btns-container > button:hover, button:focus {
+  background-color: gainsboro;
+}
+
+.search-results--back-and-forward-btns-dark-theme {
+  background-color: #f1f1f1;
+}
+
+.search-results--back-and-forward-btns-dark-theme:hover {
   background-color: gainsboro;
 }
 
@@ -550,10 +565,6 @@ focus {
   background-color: #ff23e9;
 } */
 
-.poem-detail--poem-text-displayed > p {
-  margin: 0.15rem 0rem;
-  padding: 0;
-}
 
 
 .learn-page--wikipedia-html-text-div > p {
@@ -640,6 +651,12 @@ focus {
   gap: 0.75rem;
 }
 
+.favourites-page--favourites-list-container > h3 {
+  font-family: var(--eb-garamond-font);
+  font-size: 2rem;
+  margin: 1rem 0rem;
+}
+
 .favourites-page--favourites-item-container {
   display: flex;
   /* align-items: center; */
@@ -677,7 +694,11 @@ focus {
   background-color: inherit;
 }
 
-.material-icons--delete-favourite {
+.favourites-page--favourites-list-item-btn:focus {
+  background-color: inherit;
+}
+
+.favourites-page--material-icons {
  /* background-color: #ff23e9;
   display: flex;
   align-items: center;
@@ -686,9 +707,73 @@ focus {
   background-color: inherit;
 }
 
-.material-icons--delete-favourite:hover {
+.favourites-page--material-icons-dark-mode {
+  color: gainsboro;
+ }
+
+.favourites-page--material-icons:hover {
   color: var(--primary-red);
   cursor: pointer;
 }
 
 /* FAVOURITES PAGE END */
+
+/* POEM DETAILS START */
+.details-component-placeholder-text {
+  padding-left: 2rem;
+}
+
+.poem-detail--container {
+  /* background-color: pink; */
+  padding-left: 1rem;
+}
+
+.poem-detail--author-information {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.poem-detail--author-information > img {
+  border-radius: 0rem 0rem 0rem 1rem;
+}
+
+.poem-detail--poem-text-displayed > p {
+  font-family: var(--eb-garamond-font);
+  font-size: 1.2rem;
+  margin: 0.15rem 0rem;
+  padding: 0;
+}
+
+.poem-detail--non-title-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.poem-detail--poem-title {
+  font-family: var(--eb-garamond-font);
+  font-size: 1.75rem;
+  margin: 0.75rem 0rem;
+  font-weight: 600;
+}
+
+.poem-detail--author-name {
+  font-size: 1.25rem;
+  margin: 0.75rem 0rem;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poem-detail--line-count {
+  border-left: 1px solid #aeaeae;
+  padding-left: 1rem;
+  font-size: 0.9rem;
+}
+
+.poem-detail--add-to-favourites-btn {
+  font-size: 1rem;
+  padding: 0.25rem 0.75rem;
+}
+/* POEM DETAILS END */
