@@ -100,6 +100,7 @@ export default function Navbar(props) {
             <input
               className="search-area--search-input-area"
               onChange={props.handleSearchTextInput}
+              onKeyDown={() => {}} // fires the sibling button
               value={props.searchTerm}
               type="text"
               placeholder="Search by..."

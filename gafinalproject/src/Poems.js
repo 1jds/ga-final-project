@@ -98,7 +98,7 @@ useEffect(() => {
   // --theme-dark-bg-color: rgba(5, 5, 5, 0.75);
   function handleFavourited(poemInfo) {
     const sometestResult = favesList.some(
-      (element) => element.title === poemInfo.title
+      (element) => element.title === poemInfo.title  // A possible problem here is if there are two poems with the same title, but since the API data doesn't come with IDs this is a decent temporary solution
     );
     if (sometestResult) {
       setFavesList((prevState) => [

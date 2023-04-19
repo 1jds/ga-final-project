@@ -30,6 +30,9 @@ export default function PoemDetail(props) {
           </div>
           <p className="poem-detail--poem-text-displayed">
             {lines.map((item) => {
+              if(item === "") {
+                return <div style={{height: '1.25rem'}} />
+              }
               return <p>{item}</p>;
             })}
           </p>
