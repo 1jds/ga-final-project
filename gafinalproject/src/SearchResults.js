@@ -32,7 +32,7 @@ export default function SearchResults(props) {
               {title.length < 35 ? title : `${title.slice(0, 35)}...`}
             </span>
             <button
-              className="favourites-page--favourites-list-item"
+              className="favourites-page--favourites-list-item-btn"
               key={`${author.slice(0, 3)}${title.slice(0, 3)}${index}`}
               onClick={() => handleSelect(index)}
               title="read poem"

@@ -27,7 +27,7 @@ body {
 
 .utility-class--responsive-img {
   width: 100%;
-  max-width: 150px;
+  max-width: 175px;
   height: auto;
 }
 
@@ -775,5 +775,6 @@ focus {
 .poem-detail--add-to-favourites-btn {
   font-size: 1rem;
   padding: 0.25rem 0.75rem;
+  cursor: pointer;
 }
 /* POEM DETAILS END */
