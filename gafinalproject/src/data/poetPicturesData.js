@@ -313,199 +313,199 @@ const poetPicturesData = [
     },
     {
       "poetname": "Michael Drayton",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/f/f8/MichaelDrayton.jpg"
     },
     {
       "poetname": "Oliver Goldsmith",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Oliver_Goldsmith_by_Sir_Joshua_Reynolds.jpg/393px-Oliver_Goldsmith_by_Sir_Joshua_Reynolds.jpg"
     },
     {
       "poetname": "Oliver Wendell Holmes",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Oliver_Wendell_Holmes_Jr_circa_1930-edit.jpg/328px-Oliver_Wendell_Holmes_Jr_circa_1930-edit.jpg"
     },
     {
       "poetname": "Oscar Wilde",
-      "profilepicurl": ""
+      "profilepicurl": "image.png"
     },
     {
       "poetname": "Paul Laurence Dunbar",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/a/af/Paul_Laurence_Dunbar_circa_1890.jpg"
     },
     {
       "poetname": "Percy Bysshe Shelley",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Percy_Bysshe_Shelley_by_Alfred_Clint.jpg/391px-Percy_Bysshe_Shelley_by_Alfred_Clint.jpg"
     },
     {
       "poetname": "Philip Freneau",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Philip_freneau.jpg/384px-Philip_freneau.jpg"
     },
     {
       "poetname": "Phillis Wheatley",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Phillis_Wheatley_frontispiece.jpg/378px-Phillis_Wheatley_frontispiece.jpg"
     },
     {
       "poetname": "Ralph Waldo Emerson",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Ralph_Waldo_Emerson_by_Josiah_Johnson_Hawes_1857.jpg/354px-Ralph_Waldo_Emerson_by_Josiah_Johnson_Hawes_1857.jpg"
     },
     {
       "poetname": "Richard Crashaw",
-      "profilepicurl": ""
+      "profilepicurl": "https://i0.wp.com/literariness.org/wp-content/uploads/2020/07/POETRY_October_18_2018_Richard_Crashaw.jpg?resize=700%2C1030&ssl=1"
     },
     {
       "poetname": "Richard Lovelace",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/RichardLovelace.jpg/402px-RichardLovelace.jpg"
     },
     {
       "poetname": "Robert Browning",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Robert_Browning_by_Herbert_Rose_Barraud_c1888.jpg/346px-Robert_Browning_by_Herbert_Rose_Barraud_c1888.jpg"
     },
     {
       "poetname": "Robert Burns",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/PG_1063Burns_Naysmith.jpg/392px-PG_1063Burns_Naysmith.jpg"
     },
     {
       "poetname": "Robert Herrick",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Robert_Herrick_%28poet%29_%28cropped%29.jpg/420px-Robert_Herrick_%28poet%29_%28cropped%29.jpg"
     },
     {
       "poetname": "Robert Louis Stevenson",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Robert_Louis_Stevenson_by_Henry_Walter_Barnett_bw.jpg/360px-Robert_Louis_Stevenson_by_Henry_Walter_Barnett_bw.jpg"
     },
     {
       "poetname": "Robert Southey",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/6/62/Robert_Southey_-_Project_Gutenberg_eText_13619.jpg"
     },
     {
       "poetname": "Robinson",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/0/08/Edwin_Arlington_Robinson.jpg"
     },
     {
       "poetname": "Rupert Brooke",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/For_remembrance%2C_soldier_poets_who_have_fallen_in_the_war%2C_Adcock%2C_1920_DJVU_pg_10.jpg/339px-For_remembrance%2C_soldier_poets_who_have_fallen_in_the_war%2C_Adcock%2C_1920_DJVU_pg_10.jpg"
     },
     {
       "poetname": "Samuel Coleridge",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/SamuelTaylorColeridge.jpg/386px-SamuelTaylorColeridge.jpg"
     },
     {
       "poetname": "Samuel Johnson",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/2/20/Samuel_Johnson_by_Joshua_Reynolds.jpg"
     },
     {
       "poetname": "Sarah Flower Adams",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/c/c9/SarahFlowerAdams.jpg"
     },
     {
       "poetname": "Sidney Lanier",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/5/53/Sidney_Lanier_-_Project_Gutenberg_eText_16622.jpg"
     },
     {
       "poetname": "Sir John Suckling",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Suckling.jpg/356px-Suckling.jpg"
     },
     {
       "poetname": "Sir Philip Sidney",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Sir_Philip_Sidney_from_NPG.jpg/342px-Sir_Philip_Sidney_from_NPG.jpg"
     },
     {
       "poetname": "Sir Thomas Wyatt",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Sir_Thomas_Wyatt_%281%29_by_Hans_Holbein_the_Younger.jpg/347px-Sir_Thomas_Wyatt_%281%29_by_Hans_Holbein_the_Younger.jpg"
     },
     {
       "poetname": "Sir Walter Raleigh",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Sir_Walter_Ralegh_by_%27H%27_monogrammist.jpg/390px-Sir_Walter_Ralegh_by_%27H%27_monogrammist.jpg"
     },
     {
       "poetname": "Sir Walter Scott",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Sir_Thomas_Lawrence_%281769-1830%29_-_Sir_Walter_Scott_%281771-1832%29_-_RCIN_400644_-_Royal_Collection.jpg/395px-Sir_Thomas_Lawrence_%281769-1830%29_-_Sir_Walter_Scott_%281771-1832%29_-_RCIN_400644_-_Royal_Collection.jpg"
     },
     {
       "poetname": "Stephen Crane",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/6/6c/SCrane2.JPG"
     },
     {
       "poetname": "Thomas Campbell",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Thomas_Campbell_by_Sir_Thomas_Lawrence.jpg/365px-Thomas_Campbell_by_Sir_Thomas_Lawrence.jpg"
     },
     {
       "poetname": "Thomas Chatterton",
-      "profilepicurl": ""
+      "profilepicurl": "https://images.findagrave.com/photos/2008/182/27965930_121494276416.jpg"
     },
     {
       "poetname": "Thomas Flatman",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Thomasflatman.jpg"
     },
     {
       "poetname": "Thomas Gray",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/9/9b/PortraitThomasGrayByJohnGilesEccart1747to1748.jpg"
     },
     {
       "poetname": "Thomas Hood",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Thomas_Hood_from_NPG.jpg/352px-Thomas_Hood_from_NPG.jpg"
     },
     {
       "poetname": "Thomas Moore",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Thomas_Moore%2C_after_Thomas_Lawrence.jpg/372px-Thomas_Moore%2C_after_Thomas_Lawrence.jpg"
     },
     {
       "poetname": "Thomas Warton",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Thomas_Warton_by_Reynolds.jpg/386px-Thomas_Warton_by_Reynolds.jpg"
     },
     {
       "poetname": "Walt Whitman",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Walt_Whitman_-_George_Collins_Cox.jpg/387px-Walt_Whitman_-_George_Collins_Cox.jpg"
     },
     {
       "poetname": "Walter Savage Landor",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Portrait_of_Walter_Savage_Landor_%284673349%29_%28cropped%29.jpg/403px-Portrait_of_Walter_Savage_Landor_%284673349%29_%28cropped%29.jpg"
     },
     {
       "poetname": "Wilfred Owen",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Wilfred_Owen_plate_from_Poems_%281920%29.jpg/344px-Wilfred_Owen_plate_from_Poems_%281920%29.jpg"
     },
     {
       "poetname": "William Allingham",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/William_Allingham_Photo.jpg/470px-William_Allingham_Photo.jpg"
     },
     {
       "poetname": "William Barnes",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/William_Barnes_poet.jpg/313px-William_Barnes_poet.jpg"
     },
     {
       "poetname": "William Blake",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/William_Blake_by_Thomas_Phillips.jpg/374px-William_Blake_by_Thomas_Phillips.jpg"
     },
     {
       "poetname": "William Browne",
-      "profilepicurl": ""
+      "profilepicurl": "https://www.presscom.co.uk/leepriory/leebrwnimg/images/leebrowne_p01_ax.gif"
     },
     {
       "poetname": "William Cowper",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/William_Cowper_by_Lemuel_Francis_Abbott.jpg/382px-William_Cowper_by_Lemuel_Francis_Abbott.jpg"
     },
     {
       "poetname": "William Cullen Bryant",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/William_Cullen_Bryant_Cabinet_Card_by_Mora-crop.jpg/320px-William_Cullen_Bryant_Cabinet_Card_by_Mora-crop.jpg"
     },
     {
       "poetname": "William Ernest Henley",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/0/0b/William_Ernest_Henley_young.jpg"
     },
     {
       "poetname": "William Lisle Bowles",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/c/c6/William_Lisle_Bowles.jpg"
     },
     {
       "poetname": "William Morris",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/William_Morris_age_53.jpg/381px-William_Morris_age_53.jpg"
     },
     {
       "poetname": "William Shakespeare",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/375px-Shakespeare.jpg"
     },
     {
       "poetname": "William Topaz McGonagall",
-      "profilepicurl": ""
+      "profilepicurl": "https://upload.wikimedia.org/wikipedia/commons/3/36/William_McGonagall.jpg"
     },
     {
       "poetname": "William Vaughn Moody",
