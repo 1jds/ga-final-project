@@ -209,7 +209,7 @@ body {
   vertical-align: middle;
 }
 
-.search-results--back-and-forward-btns-container > button:hover, button:focus {
+.search-results--back-and-forward-btns-container > button:hover button:focus {
   background-color: gainsboro;
 }
 
@@ -783,13 +783,14 @@ focus {
 /* NEWSLETTER START */
 .newsletter-page--tagline {
   font-family: var(--eb-garamond-font);
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   font-weight: 400;
   margin-top: 0.25rem;
 }
 
 .newsletter-page--asterisk-note {
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .newsletter-page--form-element {
@@ -832,11 +833,11 @@ focus {
 .newsletter-page--subscribe-btn {
   all: unset;
   border: 1px solid var(--primary-red);
-  padding: 1rem 2rem;
+  padding: 0.6rem 1.75rem;
   margin-bottom: 1rem;
   border-radius: 3px;
   transition: 0.3s;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--primary-red)
 }
@@ -849,9 +850,9 @@ focus {
 
 .newsletter-page--form-terms {
   max-width: 1000px;
-  font-weight: bold;
+  font-weight: 600;
   color: #818181;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
 }
 
 /* NEWSLETTER END */
