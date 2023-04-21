@@ -7,7 +7,7 @@ import SearchResults from "./SearchResults";
 import SearchIcon from "@mui/icons-material/Search";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
-import Badge from '@mui/material/Badge'
+import Badge from "@mui/material/Badge";
 
 export default function Navbar(props) {
   return (
@@ -42,7 +42,10 @@ export default function Navbar(props) {
       <div className="navbar--search-area">
         <form>
           <div>
-            <div className="utility-class--inlineblock" title="Search by an author's first or last name">
+            <div
+              className="utility-class--inlineblock"
+              title="Search by an author's first or last name"
+            >
               <input
                 onChange={(e) => {
                   props.setSearchType(e.target.value);
@@ -56,7 +59,10 @@ export default function Navbar(props) {
               />
               <label htmlFor="author">Author</label>
             </div>
-            <div className="utility-class--inlineblock" title="Search for a poem by title">
+            <div
+              className="utility-class--inlineblock"
+              title="Search for a poem by title"
+            >
               <input
                 onChange={(e) => {
                   props.setSearchType(e.target.value);
@@ -69,7 +75,10 @@ export default function Navbar(props) {
               />
               <label htmlFor="title">Title</label>
             </div>
-            <div className="utility-class--inlineblock" title="Search by a certain line of poetry">
+            <div
+              className="utility-class--inlineblock"
+              title="Search by a certain line of poetry"
+            >
               <input
                 onChange={(e) => {
                   props.setSearchType(e.target.value);
@@ -82,7 +91,10 @@ export default function Navbar(props) {
               />
               <label htmlFor="lines">Lines</label>
             </div>
-            <div className="utility-class--inlineblock" title="Search for poems of a certain line length">
+            <div
+              className="utility-class--inlineblock"
+              title="Search for poems of a certain line length"
+            >
               <input
                 onChange={(e) => {
                   props.setSearchType(e.target.value);
@@ -126,12 +138,12 @@ export default function Navbar(props) {
       </div>
 
       <div>
-      <Link className="navbar--link" to="/">
-        <img
-          src={props.isDarkMode ? navLogoDark : navLogoLight}
-          className="navbar--logo"
-        />
-      </Link>
+        <Link className="navbar--link" to="/">
+          <img
+            src={props.isDarkMode ? navLogoDark : navLogoLight}
+            className="navbar--logo"
+          />
+        </Link>
       </div>
 
       {/* <input type="text" />
@@ -150,11 +162,11 @@ export default function Navbar(props) {
           Create
         </Link>
 
-          <Badge badgeContent={props.favouritesCount} color="error">
-        <Link className="navbar--link" to="/poems/favourites">
+        <Badge badgeContent={props.favouritesCount} color="error">
+          <Link className="navbar--link" to="/poems/favourites">
             Favourites
-        </Link>
-          </Badge>          
+          </Link>
+        </Badge>
       </div>
       {/* 
       <div className="sort-and-search">

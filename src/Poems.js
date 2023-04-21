@@ -4,12 +4,11 @@ import Footer from "./Footer";
 import { Outlet } from "react-router";
 import { createContext } from "react";
 import SearchResults from "./SearchResults";
-import { useNavigate } from 'react-router-dom'
-
+import { useNavigate } from "react-router-dom";
 
 export const FavesContext = createContext();
 
-export default function PoemsList() {  
+export default function PoemsList() {
   const [APIresponse, setAPIresponse] = useState([
     {
       msg: "Use the search bar to find some poetry!",
@@ -24,32 +23,39 @@ export default function PoemsList() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [favouritesCount, setFavouritesCount] = useState(0);
   const [favesList, setFavesList] = useState([]);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
-  // alert("Getting local storage!")
-    const locallySavedFavesList = JSON.parse(localStorage.getItem('favouritedpoems'));
-    const locallySavedFavesCount = JSON.parse(localStorage.getItem('favouritedpoemscount'))
-  if (locallySavedFavesList) {
-    setFavesList(locallySavedFavesList);
-    setFavouritesCount(locallySavedFavesCount);
-  }
-}, [])
+    // alert("Getting local storage!")
+    const locallySavedFavesList = JSON.parse(
+      localStorage.getItem("favouritedpoems")
+    );
+    const locallySavedFavesCount = JSON.parse(
+      localStorage.getItem("favouritedpoemscount")
+    );
+    if (locallySavedFavesList) {
+      setFavesList(locallySavedFavesList);
+      setFavouritesCount(locallySavedFavesCount);
+    }
+  }, []);
 
-useEffect(() => {
-  if(isFirstRender) {
-    setIsFirstRender(false)
-  } else if(!isFirstRender) {
-    // alert("Setting local storage!")
-    localStorage.setItem('favouritedpoems', JSON.stringify(favesList));
-    localStorage.setItem('favouritedpoemscount', JSON.stringify(favouritesCount))
-  }
-}, [favesList])
+  useEffect(() => {
+    if (isFirstRender) {
+      setIsFirstRender(false);
+    } else if (!isFirstRender) {
+      // alert("Setting local storage!")
+      localStorage.setItem("favouritedpoems", JSON.stringify(favesList));
+      localStorage.setItem(
+        "favouritedpoemscount",
+        JSON.stringify(favouritesCount)
+      );
+    }
+  }, [favesList]);
 
-// useEffect(() => {
-//   alert("MOUNTED");
-//   return () => alert("UNMOUNTED");
-// }, [navigate]);
+  // useEffect(() => {
+  //   alert("MOUNTED");
+  //   return () => alert("UNMOUNTED");
+  // }, [navigate]);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -98,7 +104,7 @@ useEffect(() => {
   // --theme-dark-bg-color: rgba(5, 5, 5, 0.75);
   function handleFavourited(poemInfo) {
     const sometestResult = favesList.some(
-      (element) => element.title === poemInfo.title  // A possible problem here is if there are two poems with the same title, but since the API data doesn't come with IDs this is a decent temporary solution
+      (element) => element.title === poemInfo.title // A possible problem here is if there are two poems with the same title, but since the API data doesn't come with IDs this is a decent temporary solution
     );
     if (sometestResult) {
       setFavesList((prevState) => [
@@ -193,7 +199,7 @@ useEffect(() => {
       </div> */}
         {/* <pre>{JSON.stringify(APIresponse, null, 2)}</pre> */}
 
-        <Outlet context={{APIresponse, isDarkMode}} />
+        <Outlet context={{ APIresponse, isDarkMode }} />
         <Footer isDarkMode={isDarkMode} />
       </div>
     </FavesContext.Provider>

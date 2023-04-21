@@ -5,11 +5,11 @@ import PoemDetail from "./PoemDetail";
 import ErrorPage from "./ErrorPage";
 import "./index.css";
 import SearchResults from "./SearchResults";
-import About from "./About"
+import About from "./About";
 import Newsletter from "./Newsletter";
 import Learn from "./Learn";
-import Create from "./Create"
-import Favourites from "./Favourites"
+import Create from "./Create";
+import Favourites from "./Favourites";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         <Route path="/poems/favourites" element={<Favourites />} />
       </Route>
       <Route path="*" element={<ErrorPage />} />
-    </Routes>    
+    </Routes>
   );
 }
 

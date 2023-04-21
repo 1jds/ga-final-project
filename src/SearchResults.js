@@ -5,14 +5,16 @@ import PoemDetail from "./PoemDetail";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
-import IndeterminateCheckBoxOutlinedIcon from '@mui/icons-material/IndeterminateCheckBoxOutlined';
+import AddBoxOutlinedIcon from "@mui/icons-material/AddBoxOutlined";
+import IndeterminateCheckBoxOutlinedIcon from "@mui/icons-material/IndeterminateCheckBoxOutlined";
 
 export default function SearchResults(props) {
   const { favesList, handleFavourited } = useContext(FavesContext);
   const outletContextProps = useOutletContext();
   console.log("Context Props Equals...", outletContextProps);
-  const numberOfResultsPages = Math.ceil(outletContextProps.APIresponse.length / 20);
+  const numberOfResultsPages = Math.ceil(
+    outletContextProps.APIresponse.length / 20
+  );
   let resultsList = [];
   if (outletContextProps.APIresponse[0].msg) {
     resultsList = [outletContextProps.APIresponse[0].msg];
@@ -21,7 +23,7 @@ export default function SearchResults(props) {
       ({ author, title, linecount, lines }, index) => {
         const isThisItemInFaves = favesList.some(
           (element) => element.title === title
-        );        
+        );
 
         return (
           <div className="favourites-page--favourites-item-container">
@@ -54,17 +56,23 @@ export default function SearchResults(props) {
               title="add poem to favourites"
               aria-label="add this poem to your favourites"
             >
-              {isThisItemInFaves ? <IndeterminateCheckBoxOutlinedIcon className={
-                  outletContextProps.isDarkMode
-                    ? "favourites-page--material-icons favourites-page--material-icons-dark-mode"
-                    : "favourites-page--material-icons"
-                } /> : <AddBoxOutlinedIcon
-                className={
-                  outletContextProps.isDarkMode
-                    ? "favourites-page--material-icons favourites-page--material-icons-dark-mode"
-                    : "favourites-page--material-icons"
-                }
-              />}
+              {isThisItemInFaves ? (
+                <IndeterminateCheckBoxOutlinedIcon
+                  className={
+                    outletContextProps.isDarkMode
+                      ? "favourites-page--material-icons favourites-page--material-icons-dark-mode"
+                      : "favourites-page--material-icons"
+                  }
+                />
+              ) : (
+                <AddBoxOutlinedIcon
+                  className={
+                    outletContextProps.isDarkMode
+                      ? "favourites-page--material-icons favourites-page--material-icons-dark-mode"
+                      : "favourites-page--material-icons"
+                  }
+                />
+              )}
             </button>
           </div>
           // <button
@@ -114,11 +122,13 @@ export default function SearchResults(props) {
                 })
               }
             >
-              <ChevronLeftIcon className={
+              <ChevronLeftIcon
+                className={
                   outletContextProps.isDarkMode
                     ? "search-results--back-and-forward-btns-dark-theme"
                     : ""
-                } />
+                }
+              />
             </button>
             <p>
               Page {currentPageofResults} of {numberOfResultsPages}
@@ -132,11 +142,13 @@ export default function SearchResults(props) {
                 })
               }
             >
-              <ChevronRightIcon className={
+              <ChevronRightIcon
+                className={
                   outletContextProps.isDarkMode
                     ? "search-results--back-and-forward-btns-dark-theme"
                     : ""
-                } />
+                }
+              />
             </button>
           </div>
           {/* {contextProps ? (
@@ -153,7 +165,9 @@ export default function SearchResults(props) {
               selectedPoemDetails={selectedPoemDetails}
             />
           ) : (
-            <p className="details-component-placeholder-text">Select a poem to view more information...</p>
+            <p className="details-component-placeholder-text">
+              Select a poem to view more information...
+            </p>
           )}
         </div>
       </div>

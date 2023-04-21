@@ -52,10 +52,10 @@ export default function Learn() {
   };
 
   return (
-    <section style={{ padding: '1rem' }}>
+    <section style={{ padding: "1rem" }}>
       <h2>You've found the Learn sub-page!</h2>
       <p>Find out about a particular poet</p>
-      <div style={{ display: 'flex', gap: '1rem' }}>
+      <div style={{ display: "flex", gap: "1rem" }}>
         <div
           style={{
             display: "grid",
@@ -65,7 +65,14 @@ export default function Learn() {
         >
           {poetNamesList}
         </div>
-        <div style={{ maxWidth: '40%', display: "flex", alignItems: 'flex-start', gap: "1rem" }}>
+        <div
+          style={{
+            maxWidth: "40%",
+            display: "flex",
+            alignItems: "flex-start",
+            gap: "1rem",
+          }}
+        >
           {isDisambiguation ? (
             <></>
           ) : wikiResponse ? (
@@ -77,7 +84,10 @@ export default function Learn() {
             <></>
           )}
           {htmlExtract ? (
-            <div className="learn-page--wikipedia-html-text-div" dangerouslySetInnerHTML={createBioMarkup()} />
+            <div
+              className="learn-page--wikipedia-html-text-div"
+              dangerouslySetInnerHTML={createBioMarkup()}
+            />
           ) : (
             <></>
           )}
