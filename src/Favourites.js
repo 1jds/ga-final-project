@@ -4,6 +4,8 @@ import PoemDetail from "./PoemDetail";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import IndeterminateCheckBoxOutlinedIcon from '@mui/icons-material/IndeterminateCheckBoxOutlined';
 import { useOutletContext } from "react-router";
+import flowersPlaceholderLightMode from "./assets/flowers_placeholder_light_theme.svg"
+import flowersPlaceholderDarkMode from "./assets/flowers_placeholder_dark_theme.svg"
 
 export default function Favourites() {
   const outletContextProps = useOutletContext();
@@ -90,7 +92,10 @@ export default function Favourites() {
               selectedPoemDetails={selectedPoemDetails}
             />
           ) : (
-            <p className="details-component-placeholder-text">Select a poem to view more information...</p>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <p className="details-component-placeholder-text">Select a poem to view more information...</p>
+              <img src={outletContextProps.isDarkMode ? flowersPlaceholderDarkMode : flowersPlaceholderLightMode} alt="flower placeholder" style={{ maxWidth: '300px' }} />
+            </div>
           )}
         </div>
       </div>
