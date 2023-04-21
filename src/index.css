@@ -778,3 +778,80 @@ focus {
   cursor: pointer;
 }
 /* POEM DETAILS END */
+
+
+/* NEWSLETTER START */
+.newsletter-page--tagline {
+  font-family: var(--eb-garamond-font);
+  font-size: 1.9rem;
+  font-weight: 400;
+  margin-top: 0.25rem;
+}
+
+.newsletter-page--asterisk-note {
+  font-weight: bold;
+}
+
+.newsletter-page--form-element {
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0rem;
+}
+
+.newsletter-page--form-input-element {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.newsletter-page--form-input-element > label {
+  font-weight: bold;
+}
+
+.newsletter-page--form-input-element > input {
+  cursor: text;
+  height: 2.5rem;
+  border-radius: 2px;
+  box-sizing: border-box;
+  border: 1px solid #aeaeae;
+  background: #f1f1f1;
+  font-weight: bold;
+  padding: 0rem 0.75rem;
+  transition: 0.25s;
+  /* max-width: 400px; */
+}
+
+.newsletter-page--form-input-element > input:hover, input:focus, input:focus-visible {
+  outline: none;
+  border: 1px solid var(--primary-red);
+  background: white;
+}
+
+.newsletter-page--subscribe-btn {
+  all: unset;
+  border: 1px solid var(--primary-red);
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  border-radius: 3px;
+  transition: 0.3s;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-red)
+}
+
+.newsletter-page--subscribe-btn:hover {
+  color: white;
+  background-color: var(--primary-red);
+  cursor: pointer;
+}
+
+.newsletter-page--form-terms {
+  max-width: 1000px;
+  font-weight: bold;
+  color: #818181;
+  font-size: 0.95rem;
+}
+
+/* NEWSLETTER END */

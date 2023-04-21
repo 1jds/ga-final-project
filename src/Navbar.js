@@ -115,7 +115,7 @@ export default function Navbar(props) {
               onKeyDown={() => {}} // fires the sibling button
               value={props.searchTerm}
               type="text"
-              placeholder="Search by..."
+              placeholder="Search e.g. Keats"
             />
             <button
               className="search-area--search-button"
