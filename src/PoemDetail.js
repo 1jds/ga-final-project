@@ -31,7 +31,9 @@ export default function PoemDetail(props) {
           <div className="poem-detail--poem-text-displayed">
             {lines.map((item, index) => {
               if (item === "") {
-                return <div key={`${item}${index}`} style={{ height: "1.25rem" }} />;
+                return (
+                  <div key={`${item}${index}`} style={{ height: "1.25rem" }} />
+                );
               }
               return <p key={`${item}${index}`}>{item}</p>;
             })}

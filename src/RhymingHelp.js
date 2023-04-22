@@ -18,9 +18,15 @@ export default function RhymingHelp(props) {
   };
 
   return (
-    <div style={{ border: "2px solid gainsboro", borderRadius: '4px', padding: "1rem" }}>
+    <div
+      style={{
+        border: "2px solid gainsboro",
+        borderRadius: "4px",
+        padding: "1rem",
+      }}
+    >
       <p>Need help finding rhymes?</p>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div style={{ display: "flex", flexDirection: "column" }}>
         <input
           onChange={(e) => setTextInput(e.target.value)}
           type="text"

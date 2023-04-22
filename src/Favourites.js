@@ -2,17 +2,18 @@ import { useContext, useState } from "react";
 import { FavesContext } from "./Poems";
 import PoemDetail from "./PoemDetail";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import IndeterminateCheckBoxOutlinedIcon from '@mui/icons-material/IndeterminateCheckBoxOutlined';
+import IndeterminateCheckBoxOutlinedIcon from "@mui/icons-material/IndeterminateCheckBoxOutlined";
 import { useOutletContext } from "react-router";
-import flowersPlaceholderLightMode from "./assets/flowers_placeholder_light_theme.svg"
-import flowersPlaceholderDarkMode from "./assets/flowers_placeholder_dark_theme.svg"
+import flowersPlaceholderLightMode from "./assets/flowers_placeholder_light_theme.svg";
+import flowersPlaceholderDarkMode from "./assets/flowers_placeholder_dark_theme.svg";
 
 export default function Favourites() {
   const outletContextProps = useOutletContext();
   const { favesList, handleFavourited } = useContext(FavesContext);
   let favouritesList = [];
   if (favesList.length === 0) {
-    favouritesList = "No favourites added yet";
+    favouritesList =
+      "No favourites added yet. Use the search bar above to find poems that you can add to your favourites list.";
   } else {
     favouritesList = favesList.map(
       ({ author, linecount, lines, title }, index) => {
@@ -31,7 +32,13 @@ export default function Favourites() {
               title="read poem"
               aria-label="display details of this poem"
             >
-              <OpenInNewIcon className={outletContextProps.isDarkMode ? "favourites-page--material-icons favourites-page--material-icons-dark-mode" : "favourites-page--material-icons"} />
+              <OpenInNewIcon
+                className={
+                  outletContextProps.isDarkMode
+                    ? "favourites-page--material-icons favourites-page--material-icons-dark-mode"
+                    : "favourites-page--material-icons"
+                }
+              />
             </button>
             <button
               className="favourites-page--favourites-list-item-btn"
@@ -42,30 +49,18 @@ export default function Favourites() {
               title="remove poem from favourites"
               aria-label="remove this poem from favourites"
             >
-              <IndeterminateCheckBoxOutlinedIcon className={outletContextProps.isDarkMode ? "favourites-page--material-icons favourites-page--material-icons-dark-mode" : "favourites-page--material-icons"} />
+              <IndeterminateCheckBoxOutlinedIcon
+                className={
+                  outletContextProps.isDarkMode
+                    ? "favourites-page--material-icons favourites-page--material-icons-dark-mode"
+                    : "favourites-page--material-icons"
+                }
+              />
             </button>
           </div>
         );
       }
     );
-    // favouritesList = favesList.map(
-    //   ({ author, linecount, lines, title }, index) => {
-    //     return (
-    //       <div key={`${author.slice(0, 2)}${title.slice(0, 2)}${index}`}>
-    //         <p>{title}</p>
-    //         <p>{author}</p>
-    //         <p>linecount: {linecount}</p>
-    //         {/* <img src={poetPictureObj.profilepicurl} alt={`image of ${author}`} className="utility-class--responsive-img"/> */}
-    //         <div className="poem-detail--poem-text-displayed">
-    //           {lines.map((item, index) => {
-    //             return <p key={`${item.slice(0,3)}${index}`}>{item}</p>;
-    //           })}
-    //         </div>
-    //         <button onClick={() => handleFavourited({ author, linecount, lines, title })}>Remove from Faves</button>
-    //       </div>
-    //     );
-    //   }
-    // );
   }
 
   const [selectedPoemDetails, setSelectedPoemDetails] = useState(null);
@@ -92,9 +87,25 @@ export default function Favourites() {
               selectedPoemDetails={selectedPoemDetails}
             />
           ) : (
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <p className="details-component-placeholder-text">Select a poem to view more information...</p>
-              <img src={outletContextProps.isDarkMode ? flowersPlaceholderDarkMode : flowersPlaceholderLightMode} alt="flower placeholder" style={{ maxWidth: '300px' }} />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <p className="details-component-placeholder-text">
+                Select a poem to view more information...
+              </p>
+              <img
+                src={
+                  outletContextProps.isDarkMode
+                    ? flowersPlaceholderDarkMode
+                    : flowersPlaceholderLightMode
+                }
+                alt="flower placeholder"
+                style={{ maxWidth: "300px" }}
+              />
             </div>
           )}
         </div>

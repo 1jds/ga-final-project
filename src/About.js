@@ -9,7 +9,9 @@ export default function About() {
         src={teamMeetingImg}
         alt="vintage company team meeting"
       />
-      <p className="about-page--image-caption-text">Some imaginary staff from The Poetry Place's fictional history.</p>
+      <p className="about-page--image-caption-text">
+        Some imaginary staff from The Poetry Place's fictional history.
+      </p>
       <div className="about-page--history-info-container">
         <div>
           <p>The Story and History of The Poetry Place</p>

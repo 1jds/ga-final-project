@@ -110,7 +110,9 @@ export default function Navbar(props) {
             <input
               className="search-area--search-input-area"
               onChange={props.handleSearchTextInput}
-              onKeyDown={(e) => {e.key === 'Enter' && props.handleSearch(e)}}
+              onKeyDown={(e) => {
+                e.key === "Enter" && props.handleSearch(e);
+              }}
               value={props.searchTerm}
               type="text"
               placeholder="Search e.g. Keats"
