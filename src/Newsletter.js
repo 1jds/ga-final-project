@@ -31,8 +31,8 @@ export default function Newsletter() {
   };
 
   return (
-    <div className="about-page--container">
-      <h2>Newsletter Sign-up</h2>
+    <div className="newsletter-page--container">
+      <h2 className="outlet-page--main-h2-heading">Newsletter Sign-up</h2>
       <p className="newsletter-page--tagline">
         I would like to receive your amazing, exciting imaginary newsletter!
       </p>

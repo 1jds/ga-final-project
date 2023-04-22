@@ -78,6 +78,7 @@ export default function PoemsList() {
       .finally(() => {
         setLoading(false);
       });
+    navigate("/poems/search");
   };
 
   const handleSearchTextInput = (e) => {

@@ -53,7 +53,9 @@ export default function Learn() {
 
   return (
     <section style={{ padding: "1rem" }}>
-      <h2>You've found the Learn sub-page!</h2>
+      <h2 className="outlet-page--main-h2-heading">
+        You've found the Learn sub-page!
+      </h2>
       <p>Find out about a particular poet</p>
       <div style={{ display: "flex", gap: "1rem" }}>
         <div

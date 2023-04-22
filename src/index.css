@@ -9,6 +9,8 @@
   --primary-red: #e81c23;
   --theme-light-bg-color: white;
   --theme-dark-bg-color: black;
+
+  --poems-component-outlet-padding: 1rem 2rem;
 }
 
 html {
@@ -33,6 +35,11 @@ body {
 
 .poems--container {
   font-family: var(--noto-sans-font);
+}
+
+.outlet-page--main-h2-heading {
+  font-family: var(--eb-garamond-font);
+  font-size: 2.75rem;
 }
 
 /* NAVBAR START */
@@ -172,12 +179,11 @@ body {
 
 .search-results--container {
   display: flex;
-  padding: 1rem;
+  padding: var(--poems-component-outlet-padding);
 }
 
 .search-results--container > div {
   flex: 1;
-  padding: 1rem;
 }
 .search-results--container > div:first-child {
   border-right: 1px solid gainsboro;
@@ -569,22 +575,13 @@ focus {
   text-decoration: none;
 }
 
-/* svg {
-  background-color: #ff23e9;
-} */
-
 .learn-page--wikipedia-html-text-div > p {
   margin-top: 0px;
 }
 
 /* ABOUT PAGE START */
 .about-page--container {
-  padding: 1rem 2rem;
-}
-
-.about-page--container > h2 {
-  font-size: 3.25rem;
-  font-family: var(--eb-garamond-font);
+  padding: var(--poems-component-outlet-padding);
 }
 
 .about-page--hero-img {
@@ -638,13 +635,12 @@ focus {
 /* FAVOURITES PAGE START */
 .favourites-page--container {
   display: flex;
-  padding: 1rem;
+  padding: var(--poems-component-outlet-padding);
   min-height: 40vh;
 }
 
 .favourites-page--container > div {
   flex: 1;
-  padding: 1rem;
 }
 .favourites-page--container > div:first-child {
   border-right: 1px solid gainsboro;
@@ -654,6 +650,7 @@ focus {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  padding-right: 1rem;
 }
 
 .favourites-page--favourites-list-container > h3 {
@@ -725,12 +722,11 @@ focus {
 
 /* POEM DETAILS START */
 .details-component-placeholder-text {
-  padding-left: 2rem;
+  padding-top: 2rem;
 }
 
 .poem-detail--container {
-  /* background-color: pink; */
-  padding-left: 1rem;
+  padding: var(--poems-component-outlet-padding);
 }
 
 .poem-detail--author-information {
@@ -764,7 +760,7 @@ focus {
 .poem-detail--poem-title {
   font-family: var(--eb-garamond-font);
   font-size: 1.75rem;
-  margin: 0.75rem 0rem;
+  margin: 1.5rem 0rem;
   font-weight: 600;
 }
 
@@ -789,6 +785,10 @@ focus {
 /* POEM DETAILS END */
 
 /* NEWSLETTER START */
+.newsletter-page--container {
+  padding: var(--poems-component-outlet-padding);
+}
+
 .newsletter-page--tagline {
   font-family: var(--eb-garamond-font);
   font-size: 1.5rem;
@@ -833,8 +833,8 @@ focus {
 }
 
 .newsletter-page--form-input-element > input:hover,
-input:focus,
-input:focus-visible {
+.newsletter-page--form-input-element > input:focus,
+.newsletter-page--form-input-element > input:focus-visible {
   outline: none;
   border: 1px solid var(--primary-red);
   background: white;
@@ -866,3 +866,120 @@ input:focus-visible {
 }
 
 /* NEWSLETTER END */
+
+/* CREATE PAGE START */
+.create-page--container {
+  padding: var(--poems-component-outlet-padding);
+}
+
+.create-page--two-parts-flex-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.create-page--two-parts-flex-container > *:first-child {
+/* grow-shrink-basis */
+flex: 3 1 0; 
+}
+
+.create-page--two-parts-flex-container > *:last-child {
+/* grow-shrink-basis */
+flex: 1 1 0; 
+}
+
+.create-page--user-poem-text-input {
+  width: 100%;
+  overflow: auto;
+  resize: vertical;
+  border: 2px solid gainsboro;
+  border-radius: 4px;
+  padding: 1rem;
+  box-sizing: border-box;
+  min-height: 300px;
+  background-color: #fcfcfc;
+  font-size: 1.2rem;
+  font-family: var(--noto-sans-font);
+}
+
+.create-page--save-user-poem-btn {
+  padding: 0.4rem;
+  width: 100%;
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+  letter-spacing: 1.5ch;
+  font-weight: 600;
+  color: #5e5e5e;
+  background-color: #f1f1f1;
+  text-transform: uppercase;
+  font-family: var(--noto-sans-font);
+  border: 1px solid #aeaeae;
+  border-radius: 4px;
+}
+
+.create-page--save-user-poem-btn:hover, .create-page--save-user-poem-btn:focus, .create-page--save-user-poem-btn:focus-visible {
+  border: 1px solid var(--primary-red);
+  background-color: #fafafa;
+  cursor: pointer;
+}
+
+.rhyming-help-component--container {
+  border: 2px solid gainsboro;
+  background-color: #fcfcfc;
+  border-radius: 4px;
+  padding: 1rem;
+  box-sizing: border-box;
+  min-height: calc(390px - 0.25rem);
+}
+
+.rhyming-help-component--heading {
+  margin: 0rem 0rem 0.5rem 0rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.rhyming-help-component--input-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.rhyming-help-component--input-area > input {
+  padding: 0.6rem 0.4rem;
+}
+
+.rhyming-help-component--input-area > input, .rhyming-help-component--input-area > button {
+  font-size: 0.9rem;
+  font-family: var(--noto-sans-font);
+  border: 1px solid #aeaeae;
+  border-radius: 4px;
+}
+
+.rhyming-help-component--input-area > button {
+  padding: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3ch;
+  font-weight: 600;
+  color: #5e5e5e;
+  background-color: #f1f1f1;
+}
+
+.rhyming-help-component--input-area > button:hover, .rhyming-help-component--input-area > button:focus, .rhyming-help-component--input-area > button:focus-visible {
+  border: 1px solid var(--primary-red);
+  background-color: #fafafa;
+  cursor: pointer;
+}
+
+.rhyming-help-component--words-list {
+  all: unset;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 1rem;
+}
+
+
+
+/* CREATE PAGE END */

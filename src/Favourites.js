@@ -77,7 +77,9 @@ export default function Favourites() {
     <>
       <div className="favourites-page--container">
         <div className="favourites-page--favourites-list-container">
-          <h3>Your Saved Favourite Poems</h3>
+          <h2 className="outlet-page--main-h2-heading">
+            Your Saved Favourite Poems
+          </h2>
           {favouritesList}
         </div>
         <div>

@@ -18,28 +18,22 @@ export default function RhymingHelp(props) {
   };
 
   return (
-    <div
-      style={{
-        border: "2px solid gainsboro",
-        borderRadius: "4px",
-        padding: "1rem",
-      }}
-    >
-      <p>Need help finding rhymes?</p>
-      <div style={{ display: "flex", flexDirection: "column" }}>
+    <div className="rhyming-help-component--container">
+      <p className="rhyming-help-component--heading">Rhyme Finder!</p>
+      <div className="rhyming-help-component--input-area">
         <input
           onChange={(e) => setTextInput(e.target.value)}
           type="text"
           id="wordToRhyme"
           value={textInput}
+          placeholder="Find a rhyme for that word"
+          onKeyDown={(e) => {
+            e.key === "Enter" && handleRhymeWordSearch();
+          }}
         ></input>
         <button onClick={handleRhymeWordSearch}>Search</button>
       </div>
-      <ul
-        style={{ display: "flex", flexDirection: "column", flexWrap: "wrap" }}
-      >
-        {rhymingWordsList}
-      </ul>
+      <ul className="rhyming-help-component--words-list">{rhymingWordsList}</ul>
     </div>
   );
 }

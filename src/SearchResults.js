@@ -116,7 +116,7 @@ export default function SearchResults(props) {
       <div className="search-results--container">
         <div>
           <div className="favourites-page--favourites-list-container">
-            <h3>Search Results</h3>
+            <h2 className="outlet-page--main-h2-heading">Search Results</h2>
             {resultsList.slice(firstIndex, lastIndex)}
           </div>
           <div className="search-results--back-and-forward-btns-container">
