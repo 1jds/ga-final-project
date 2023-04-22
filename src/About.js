@@ -7,7 +7,7 @@ export default function About() {
       <img
         className="about-page--hero-img"
         src={teamMeetingImg}
-        alt="vintage company team meeting image"
+        alt="vintage company team meeting"
       />
       <p className="about-page--image-caption-text">Some imaginary staff from The Poetry Place's fictional history.</p>
       <div className="about-page--history-info-container">

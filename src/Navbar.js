@@ -1,8 +1,6 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import navLogoDark from "./assets/nav_logo_dark_theme.svg";
 import navLogoLight from "./assets/nav_logo_light_theme.svg";
-import SearchBar from "./SearchBar";
 import SearchResults from "./SearchResults";
 import SearchIcon from "@mui/icons-material/Search";
 import LightModeIcon from "@mui/icons-material/LightMode";
@@ -112,14 +110,14 @@ export default function Navbar(props) {
             <input
               className="search-area--search-input-area"
               onChange={props.handleSearchTextInput}
-              onKeyDown={() => {}} // fires the sibling button
+              onKeyDown={(e) => {e.key === 'Enter' && props.handleSearch(e)}}
               value={props.searchTerm}
               type="text"
               placeholder="Search e.g. Keats"
             />
             <button
               className="search-area--search-button"
-              onClick={props.handleSearch}
+              onClick={(e) => props.handleSearch(e)}
               disabled={!props.searchType || !props.searchTerm}
             >
               <Link
@@ -142,6 +140,7 @@ export default function Navbar(props) {
           <img
             src={props.isDarkMode ? navLogoDark : navLogoLight}
             className="navbar--logo"
+            alt="logo"
           />
         </Link>
       </div>

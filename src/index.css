@@ -739,6 +739,10 @@ focus {
   border-radius: 0rem 0rem 0rem 1rem;
 }
 
+.poem-detail--poem-text-displayed {
+  margin-top: 1rem;
+}
+
 .poem-detail--poem-text-displayed > p {
   font-family: var(--eb-garamond-font);
   font-size: 1.2rem;

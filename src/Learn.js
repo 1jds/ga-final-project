@@ -79,6 +79,7 @@ export default function Learn() {
             <img
               src={wikiResponse.thumbnail.source}
               style={{ maxWidth: "200px", borderRadius: "50px 0px 0px 0px" }}
+              alt="author portrait"
             />
           ) : (
             <></>

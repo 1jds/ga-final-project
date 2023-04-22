@@ -13,7 +13,7 @@ import flowersPlaceholderDarkMode from "./assets/flowers_placeholder_dark_theme.
 export default function SearchResults(props) {
   const { favesList, handleFavourited } = useContext(FavesContext);
   const outletContextProps = useOutletContext();
-  console.log("Context Props Equals...", outletContextProps);
+  // console.log("Context Props Equals...", outletContextProps);
   const numberOfResultsPages = Math.ceil(
     outletContextProps.APIresponse.length / 20
   );
@@ -28,7 +28,7 @@ export default function SearchResults(props) {
         );
 
         return (
-          <div className="favourites-page--favourites-item-container">
+          <div key={`${author}${lines}${index}`} className="favourites-page--favourites-item-container">
             <span className="favourites-page--favourites-list-item">
               <strong>{author}</strong>
             </span>
@@ -104,7 +104,7 @@ export default function SearchResults(props) {
   const lastIndex = currentPageofResults * 20;
   const firstIndex = lastIndex - 20;
 
-  console.log("results list just before render", resultsList);
+  // console.log("results list just before render", resultsList);
 
   const clearSelectedPoemDetails = () => {};
 

@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { FavesContext } from "./Poems";
 
 export default function PoemDetail(props) {
-  console.log("PoemDetails Props:", props.selectedPoemDetails);
+  // console.log("PoemDetails Props:", props.selectedPoemDetails);
   const { author, linecount, lines, title } = props.selectedPoemDetails;
   // console.log("successful destructure?", author, linecount, lines, title)
   const poetPictureObj = poetPicturesData.find(
@@ -12,7 +12,7 @@ export default function PoemDetail(props) {
   //   console.log(poetPictureObj)
 
   const { favesList, handleFavourited } = useContext(FavesContext);
-  console.log("favesList looks like this:", favesList);
+  // console.log("favesList looks like this:", favesList);
   const alreadyFaved = favesList.some(
     (element) => element.title === props.selectedPoemDetails.title
   );
@@ -28,18 +28,18 @@ export default function PoemDetail(props) {
               Poem length: {linecount} lines
             </p>
           </div>
-          <p className="poem-detail--poem-text-displayed">
-            {lines.map((item) => {
+          <div className="poem-detail--poem-text-displayed">
+            {lines.map((item, index) => {
               if (item === "") {
-                return <div style={{ height: "1.25rem" }} />;
+                return <div key={`${item}${index}`} style={{ height: "1.25rem" }} />;
               }
-              return <p>{item}</p>;
+              return <p key={`${item}${index}`}>{item}</p>;
             })}
-          </p>
+          </div>
         </div>
         <img
           src={poetPictureObj.profilepicurl}
-          alt={`image of ${author}`}
+          alt={`${author}`}
           className="utility-class--responsive-img"
         />
       </div>

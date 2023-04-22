@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./HomePage";
 import Poems from "./Poems";
-import PoemDetail from "./PoemDetail";
 import ErrorPage from "./ErrorPage";
 import "./index.css";
 import SearchResults from "./SearchResults";

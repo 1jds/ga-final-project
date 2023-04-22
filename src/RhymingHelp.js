@@ -18,7 +18,7 @@ export default function RhymingHelp(props) {
   };
 
   return (
-    <div style={{ border: "3px solid red", padding: "1rem" }}>
+    <div style={{ border: "2px solid gainsboro", borderRadius: '4px', padding: "1rem" }}>
       <p>Need help finding rhymes?</p>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <input
