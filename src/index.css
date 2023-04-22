@@ -879,13 +879,13 @@ focus {
 }
 
 .create-page--two-parts-flex-container > *:first-child {
-/* grow-shrink-basis */
-flex: 3 1 0; 
+  /* grow-shrink-basis */
+  flex: 3 1 0;
 }
 
 .create-page--two-parts-flex-container > *:last-child {
-/* grow-shrink-basis */
-flex: 1 1 0; 
+  /* grow-shrink-basis */
+  flex: 1 1 0;
 }
 
 .create-page--user-poem-text-input {
@@ -917,7 +917,9 @@ flex: 1 1 0;
   border-radius: 4px;
 }
 
-.create-page--save-user-poem-btn:hover, .create-page--save-user-poem-btn:focus, .create-page--save-user-poem-btn:focus-visible {
+.create-page--save-user-poem-btn:hover,
+.create-page--save-user-poem-btn:focus,
+.create-page--save-user-poem-btn:focus-visible {
   border: 1px solid var(--primary-red);
   background-color: #fafafa;
   cursor: pointer;
@@ -949,7 +951,8 @@ flex: 1 1 0;
   padding: 0.6rem 0.4rem;
 }
 
-.rhyming-help-component--input-area > input, .rhyming-help-component--input-area > button {
+.rhyming-help-component--input-area > input,
+.rhyming-help-component--input-area > button {
   font-size: 0.9rem;
   font-family: var(--noto-sans-font);
   border: 1px solid #aeaeae;
@@ -965,7 +968,9 @@ flex: 1 1 0;
   background-color: #f1f1f1;
 }
 
-.rhyming-help-component--input-area > button:hover, .rhyming-help-component--input-area > button:focus, .rhyming-help-component--input-area > button:focus-visible {
+.rhyming-help-component--input-area > button:hover,
+.rhyming-help-component--input-area > button:focus,
+.rhyming-help-component--input-area > button:focus-visible {
   border: 1px solid var(--primary-red);
   background-color: #fafafa;
   cursor: pointer;
@@ -979,7 +984,5 @@ flex: 1 1 0;
   list-style: none;
   padding: 1rem;
 }
-
-
 
 /* CREATE PAGE END */
