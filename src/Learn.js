@@ -119,8 +119,14 @@ export default function Learn() {
         </p>
         <select
           onChange={(e) => {
-            e.target.value !== "default" && handleSearch(e.target.value);
-            handleRandomPoemByThisAuthor(e.target.value);
+            if (e.target.value === "default") {
+              setIsInitialRender(true);
+              setWikiResponse(null);
+              setHtmlExtract(null);
+            } else if (e.target.value !== "default") {
+              handleSearch(e.target.value);
+              handleRandomPoemByThisAuthor(e.target.value);
+            }
           }}
         >
           <option value="default">Choose a poet</option>
@@ -179,7 +185,6 @@ export default function Learn() {
             <div style={{ flex: "1" }}>
               {randomPoetsPoem ? (
                 <PoemDetail
-                  // clearSelectedPoemDetails={clearSelectedPoemDetails}
                   selectedPoemDetails={randomPoetsPoem}
                   displayImg={false}
                 />
