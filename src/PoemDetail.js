@@ -39,11 +39,11 @@ export default function PoemDetail(props) {
             })}
           </div>
         </div>
-        <img
+        {props.displayImg ? (<img
           src={poetPictureObj.profilepicurl}
           alt={`${author}`}
           className="utility-class--responsive-img"
-        />
+        />) : null}
       </div>
       <button
         className="poem-detail--add-to-favourites-btn"

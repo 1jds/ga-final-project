@@ -168,6 +168,7 @@ export default function SearchResults(props) {
             <PoemDetail
               clearSelectedPoemDetails={clearSelectedPoemDetails}
               selectedPoemDetails={selectedPoemDetails}
+              displayImg={true}
             />
           ) : (
             <div

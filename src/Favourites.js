@@ -87,6 +87,7 @@ export default function Favourites() {
             <PoemDetail
               clearSelectedPoemDetails={clearSelectedPoemDetails}
               selectedPoemDetails={selectedPoemDetails}
+              displayImg={true}
             />
           ) : (
             <div

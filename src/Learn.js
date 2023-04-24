@@ -1,40 +1,34 @@
 import { useEffect, useState } from "react";
 import poetPicturesData from "./data/poetPicturesData";
 import sanitizeHtml from "sanitize-html";
+import PoemDetail from "./PoemDetail";
+import { useOutletContext } from "react-router";
+import rosesPlaceholderLight from "./assets/roses_placeholder_light_theme.svg";
+import rosesPlaceholderDark from "./assets/roses_placeholder_dark_theme.svg";
 
 export default function Learn() {
-  const [wikiResponse, setWikiResponse] = useState();
-  const [isDisambiguation, setIsDisambiguation] = useState(null);
+  const outletContextProps = useOutletContext();
+  const [wikiResponse, setWikiResponse] = useState(null);
   const [htmlExtract, setHtmlExtract] = useState(null);
   const [isInitialRender, setIsInitialRender] = useState(true); //This is just to circumvent useEffect's default behaviour of firing on first render. I guess I could instead just have the regex code in a non-useEffect-function that is called by the fetching function...
+  const [randomPoetsPoem, setRandomPoetsPoem] = useState(null);
   const [poetNamesList, setPoetNamesList] = useState(
     poetPicturesData.map((item, index) => {
       return (
-        <button
-          key={`${item}${index}`}
-          value={item.poetname}
-          onClick={(e) => handleSearch(e.target.value)}
-        >
+        <option key={`${item}${index}`} value={item.poetname}>
           {item.poetname}
-        </button>
+        </option>
       );
     })
   );
+  console.log(randomPoetsPoem);
 
   useEffect(() => {
     if (isInitialRender) {
       setIsInitialRender(false);
     } else {
-      if (wikiResponse.type === "disambiguation") {
-        setIsDisambiguation(true);
-        setHtmlExtract(
-          `<p><strong>Oops!</strong> No appropriate information is available for this poet! Please try another poet or just Google it.</p>`
-        );
-      } else {
-        setIsDisambiguation(false);
-        setHtmlExtract(sanitizeHtml(wikiResponse.extract_html));
-        // wikipedia data may be sanitized already on their server, but it is publically editable, so a quick safety measure here before setting innerHTML.
-      }
+      setHtmlExtract(sanitizeHtml(wikiResponse.extract_html));
+      // wikipedia data may be sanitized already on their server, but it is publically editable, so a quick safety measure here before setting innerHTML.
     }
   }, [wikiResponse]);
 
@@ -43,60 +37,169 @@ export default function Learn() {
   }
 
   const handleSearch = (poetName) => {
-    fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${poetName}`)
+    let poetNameToSearch = "";
+    switch (poetName) {
+      case "Robinson":
+        poetNameToSearch = "Edwin Arlington Robinson";
+        break;
+      case "Oliver Wendell Holmes":
+        poetNameToSearch = "Oliver Wendell Holmes Sr.";
+        break;
+      case "Major Henry Livingston, Jr.":
+        poetNameToSearch = "Henry Livingston Jr.";
+        break;
+      case "Charlotte Smith":
+        poetNameToSearch = "Charlotte Smith (writer)";
+        break;
+      default:
+        poetNameToSearch = poetName;
+    } // These are manual work-arounds for edge cases (e.g. 'Robinson' is a typo or something on the API database)
+    fetch(
+      `https://en.wikipedia.org/api/rest_v1/page/summary/${poetNameToSearch}`
+    )
       .then((response) => response.json())
       .then((data) => {
-        // console.log("Wiki API fetch response data", data)
-        setWikiResponse(data);
+        console.log("Wiki API fetch response data", data);
+        if (data.type === "disambiguation") {
+          fetch(
+            `https://en.wikipedia.org/w/api.php?action=opensearch&search=${poetNameToSearch}&format=json&origin=*`
+          ).then(function (response) {
+            response.json().then(function (secondFetchData) {
+              console.log(secondFetchData);
+              // data[1] is the array of titles, [2] is the array of descriptions, [3] is the array of links
+              let correctArticleTitle =
+                secondFetchData[1][
+                  secondFetchData[1].findIndex((element) =>
+                    element.includes("poet")
+                  )
+                ];
+              if (correctArticleTitle !== -1) {
+                // -1 would be not found
+                console.log(correctArticleTitle); //the correct article title
+                fetch(
+                  `https://en.wikipedia.org/api/rest_v1/page/summary/${correctArticleTitle}`
+                )
+                  .then((response) => response.json())
+                  .then((thirdFetchData) => {
+                    setWikiResponse(thirdFetchData);
+                  });
+              }
+            });
+          });
+        } else {
+          setWikiResponse(data);
+        }
+      });
+  };
+
+  const handleRandomPoemByThisAuthor = (poetName) => {
+    fetch(`https://poetrydb.org/author/${poetName}`)
+      .then((res) => res.json())
+      .then((poemsByThisAuthorData) => {
+        const getRandomPoem = (arr) => {
+          // get random index value
+          const randomIndex = Math.floor(Math.random() * arr.length);
+          // get random item
+          const item = arr[randomIndex];
+          return item;
+        };
+        const returnedRandomPoem = getRandomPoem(poemsByThisAuthorData);
+        console.log(returnedRandomPoem);
+        setRandomPoetsPoem(returnedRandomPoem);
       });
   };
 
   return (
-    <section style={{ padding: "1rem" }}>
-      <h2 className="outlet-page--main-h2-heading">
-        You've found the Learn sub-page!
-      </h2>
-      <p>Find out about a particular poet</p>
-      <div style={{ display: "flex", gap: "1rem" }}>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: "1rem",
+    <section className="learn-page--container">
+      <h2 className="outlet-page--main-h2-heading">Learn About The Poets!</h2>
+      <div className="learn-page--tag-line-and-search-container">
+        <p>
+          Find out about a particular poet and read a stochastically selected
+          poem!
+        </p>
+        <select
+          onChange={(e) => {
+            e.target.value !== "default" && handleSearch(e.target.value);
+            handleRandomPoemByThisAuthor(e.target.value);
           }}
         >
-          {poetNamesList}
-        </div>
-        <div
-          style={{
-            maxWidth: "40%",
-            display: "flex",
-            alignItems: "flex-start",
-            gap: "1rem",
-          }}
-        >
-          {isDisambiguation ? (
-            <></>
-          ) : wikiResponse ? (
-            <img
-              src={wikiResponse.thumbnail.source}
-              style={{ maxWidth: "200px", borderRadius: "50px 0px 0px 0px" }}
-              alt="author portrait"
-            />
-          ) : (
-            <></>
-          )}
-          {htmlExtract ? (
-            <div
-              className="learn-page--wikipedia-html-text-div"
-              dangerouslySetInnerHTML={createBioMarkup()}
-            />
-          ) : (
-            <></>
-          )}
-        </div>
+          <option value="default">Choose a poet</option>
+          {poetNamesList ? poetNamesList : null}
+        </select>
       </div>
-      {/* <pre>{JSON.stringify(wikiResponse, null, 2)}</pre> */}
+      <div style={{ display: "flex", gap: "3rem" }}>
+        {wikiResponse ? (
+          <>
+            <div style={{ flex: "1", paddingTop: "1rem" }}>
+              {wikiResponse ? (
+                <p class="learn-page--about-the-author-sub-heading">
+                  About The Poet
+                </p>
+              ) : null}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "1rem",
+                }}
+              >
+                {wikiResponse ? (
+                  <img
+                    src={wikiResponse.thumbnail.source}
+                    style={{ maxWidth: "200px", borderRadius: "1rem" }}
+                    alt="author portrait"
+                  />
+                ) : null}
+                {htmlExtract ? (
+                  <div
+                    className="learn-page--wikipedia-html-text-div"
+                    dangerouslySetInnerHTML={createBioMarkup()}
+                  />
+                ) : (
+                  <></>
+                )}
+              </div>
+              {wikiResponse ? (
+                <div className="learn-page--youtube-iframe-container">
+                  <p class="learn-page--about-the-author-sub-heading">
+                    About Poetry (Learn More)
+                  </p>
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/URuMb15CWJs"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              ) : null}
+            </div>
+            <div style={{ flex: "1" }}>
+              {randomPoetsPoem ? (
+                <PoemDetail
+                  // clearSelectedPoemDetails={clearSelectedPoemDetails}
+                  selectedPoemDetails={randomPoetsPoem}
+                  displayImg={false}
+                />
+              ) : null}
+            </div>
+          </>
+        ) : (
+          <div
+            style={{ display: "flex", justifyContent: "center", width: "90%" }}
+          >
+            <img
+              src={
+                outletContextProps.isDarkMode
+                  ? rosesPlaceholderDark
+                  : rosesPlaceholderLight
+              }
+            />
+          </div>
+        )}
+      </div>
     </section>
   );
 }

@@ -780,6 +780,7 @@ focus {
 .poem-detail--add-to-favourites-btn {
   font-size: 1rem;
   padding: 0.25rem 0.75rem;
+  margin-top: 1rem;
   cursor: pointer;
 }
 /* POEM DETAILS END */
@@ -986,3 +987,54 @@ focus {
 }
 
 /* CREATE PAGE END */
+
+/* LEARN PAGE START */
+.learn-page--container {
+  padding: var(--poems-component-outlet-padding);
+}
+
+.learn-page--tag-line-and-search-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.learn-page--tag-line-and-search-container > p {
+  font-family: var(--eb-garamond-font);
+  font-size: 1.75rem;
+  margin: 0;  
+}
+
+.learn-page--tag-line-and-search-container > select {
+  font-size: 1rem;
+  letter-spacing: 0.15ch;
+  height: 2.5rem;
+  padding: 0rem 0.5rem;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+.learn-page--tag-line-and-search-container > select:hover {
+  cursor: pointer;
+  border: 1px solid var(--primary-red);
+  border-radius: 4px;
+  background-color: white;
+}
+
+.learn-page--about-the-author-sub-heading {
+  font-family: var(--eb-garamond-font);
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 1.5rem 0rem;
+}
+
+.learn-page--youtube-iframe-container {
+  padding: 2rem 0rem;
+}
+
+.learn-page--youtube-iframe-container > iframe {
+  border-radius: 1rem;
+}
+
+/* LEARN PAGE END */
