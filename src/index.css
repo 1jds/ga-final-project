@@ -9,6 +9,14 @@
   --primary-red: #e81c23;
   --theme-light-bg-color: white;
   --theme-dark-bg-color: #181818;
+  --bg: linear-gradient(to right, var(--color-1), var(--color-2));
+  --footer-fill: radial-gradient(
+    circle,
+    var(--primary-red) 0%,
+    var(--primary-red) 34%,
+    rgba(255, 255, 255, 0) 35%,
+    rgba(255, 255, 255, 0) 100%
+  );
 
   --poems-component-outlet-padding: 1rem 2rem;
 }
@@ -560,14 +568,14 @@ body {
 
 .footer--logo {
   max-width: 225px;
-  background: radial-gradient(
+  background: var(--footer-fill); 
+  /* background: radial-gradient(
     circle,
     rgba(255, 0, 0, 0.8) 0%,
     rgba(220, 20, 60, 1) 34%,
     rgba(255, 255, 255, 0) 35%,
     rgba(255, 255, 255, 0) 100%
-  );
-  /* border: 3px solid black; */
+  ); */
   box-shadow: 0 0 0 1px white, 0 0 0 5px var(--primary-red);
   border-radius: 50%;
 }
