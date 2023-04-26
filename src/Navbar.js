@@ -45,7 +45,14 @@ export default function Navbar(props) {
             : "navbar--accessability-dialog-background"
         }
       >
-        <div className="navbar--accessability-dialog-container">
+        <div
+          onClick={(e) => e.stopPropagation()}
+          className={
+            props.isDarkMode
+              ? "navbar--accessability-dialog-container navbar--accessability-dialog-container-dark-mode"
+              : "navbar--accessability-dialog-container"
+          }
+        >
           <p className="navbar--accessability-dialog-heading">
             Colour Blindness Settings
           </p>

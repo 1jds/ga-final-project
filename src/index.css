@@ -121,7 +121,7 @@ body {
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  height: 100vh;  
+  height: 100vh;
   padding: 0;
   margin: 0;
   display: flex;
@@ -130,8 +130,8 @@ body {
 }
 
 .navbar--accessability-dialog-background-active {
-  visibility: visible;  
-  z-index: 99;
+  visibility: visible;
+  z-index: 89;
 }
 
 .navbar--accessability-dialog-container {
@@ -140,6 +140,11 @@ body {
   border: 2px solid black;
   padding: 1rem 1.25rem;
 }
+
+.navbar--accessability-dialog-container-dark-mode {
+  color: black;
+}
+
 .navbar--accessability-dialog-heading {
   text-align: center;
   margin: 0;
@@ -162,9 +167,8 @@ body {
 }
 
 .navbar--accessability-dialog-input-label {
-  font-size: 1.15rem
+  font-size: 1.15rem;
 }
-
 
 .navbar--logo {
   max-width: 225px;
@@ -1081,7 +1085,7 @@ body {
 .learn-page--tag-line-and-search-container > p {
   font-family: var(--eb-garamond-font);
   font-size: 1.75rem;
-  margin: 0;  
+  margin: 0;
 }
 
 .learn-page--tag-line-and-search-container > select {
