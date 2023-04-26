@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import navLogoDark from "./assets/nav_logo_dark_theme.svg";
 import navLogoLight from "./assets/nav_logo_light_theme.svg";
@@ -6,10 +7,74 @@ import SearchIcon from "@mui/icons-material/Search";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import Badge from "@mui/material/Badge";
+import AccessibilityNewOutlinedIcon from "@mui/icons-material/AccessibilityNewOutlined";
 
 export default function Navbar(props) {
+  const [accessabilityColorPickerValue, setAccessabilityColorPickerValue] =
+    useState();
+  const [isAccessabilityDialogActive, setIsAccessabilityDialogActive] =
+    useState(false);
+  // TO CHANGE THE THEME COLOUR FOR COLOUR-BLIND USERS
+  let root = document.documentElement;
+  const changeRootCustomProperty = (property, value) => {
+    root.style.setProperty(property, value);
+  };
+
+  function toggleAccessabilityDialogActiveState(boolParam) {
+    setIsAccessabilityDialogActive(boolParam);
+  }
+
   return (
     <div className="navbar">
+      <button
+        className={
+          props.isDarkMode
+            ? "navbar--accessability-options navbar--theme-icon-dark-mode"
+            : "navbar--accessability-options navbar--theme-icon-light-mode"
+        }
+        onClick={() => toggleAccessabilityDialogActiveState(true)}
+      >
+        <AccessibilityNewOutlinedIcon />
+      </button>
+      <div
+        role="button"
+        onClick={() => toggleAccessabilityDialogActiveState(false)}
+        className={
+          isAccessabilityDialogActive
+            ? "navbar--accessability-dialog-background navbar--accessability-dialog-background-active"
+            : "navbar--accessability-dialog-background"
+        }
+      >
+        <div className="navbar--accessability-dialog-container">
+          <p className="navbar--accessability-dialog-heading">
+            Colour Blindness Settings
+          </p>
+          <p className="navbar--accessability-dialog-explanation">
+            Use the colour selector in this dialog to change the theme color of
+            the website to a color that you can see more easily. If your color
+            blindness is monochromatic, please select medium-gray.
+          </p>
+          <div className="navbar--accesability-dialog-input-box">
+            <label
+              className="navbar--accessability-dialog-input-label"
+              for="color-picker"
+            >
+              Color
+            </label>
+            <input
+              onChange={(e) => {
+                setAccessabilityColorPickerValue(e.target.value);
+                changeRootCustomProperty("--primary-red", e.target.value);
+              }}
+              className="navbar--accessability-dialog-color-input"
+              type="color"
+              value={accessabilityColorPickerValue}
+              id="color-picker"
+            />
+          </div>
+        </div>
+      </div>
+
       <div
         className={
           props.isDarkMode
@@ -142,7 +207,7 @@ export default function Navbar(props) {
           <img
             src={props.isDarkMode ? navLogoDark : navLogoLight}
             className="navbar--logo"
-            alt="logo"
+            alt="website logo"
           />
         </Link>
       </div>

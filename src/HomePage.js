@@ -23,9 +23,11 @@ export default function HomePage() {
               </p>
             </div>
             <p className="author-line">Design by James</p>
-            <Link to="/poems" className="home-page--link">
-              ENTER
-            </Link>
+            <div className="home-page--link-animation-div">
+              <Link to="/poems" className="home-page--link">
+                ENTER
+              </Link>
+            </div>
             <div className="book-cover-spine-line"></div>
           </div>
         </div>

@@ -153,7 +153,7 @@ export default function Learn() {
                   <img
                     src={wikiResponse.thumbnail.source}
                     style={{ maxWidth: "200px", borderRadius: "1rem" }}
-                    alt="author portrait"
+                    alt="author portrait thumbnail"
                   />
                 ) : null}
                 {htmlExtract ? (

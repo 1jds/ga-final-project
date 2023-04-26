@@ -51,6 +51,12 @@ export default function PoemsList() {
 
   const handleSearch = (e) => {
     e.preventDefault();
+    
+    if(!searchType || !searchTerm) {
+      alert("Please select a category first, such as 'Author', or 'Title'.")
+      return
+    }
+
     fetch(`https://poetrydb.org/${searchType}/${searchTerm}`)
       .then((response) => {
         // console.log(response.status);

@@ -12,6 +12,7 @@ export default function Footer(props) {
     <div className="footer--container">
       <img
         src={props.isDarkMode ? footerLogoDark : footerLogoLight}
+        alt="website footer logo"
         className="footer--logo"
       />
       <div className="footer--content-container">

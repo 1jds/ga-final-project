@@ -187,7 +187,7 @@ export default function SearchResults(props) {
                     ? flowersPlaceholderDarkMode
                     : flowersPlaceholderLightMode
                 }
-                alt="flower placeholder"
+                alt="flower background placeholder"
                 style={{ maxWidth: "300px" }}
               />
             </div>

@@ -106,7 +106,7 @@ export default function Favourites() {
                     ? flowersPlaceholderDarkMode
                     : flowersPlaceholderLightMode
                 }
-                alt="flower placeholder"
+                alt="background flower placeholder"
                 style={{ maxWidth: "300px" }}
               />
             </div>
