@@ -304,11 +304,9 @@ body {
 .search-results--back-and-forward-btns-dark-theme:hover {
   background-color: gainsboro;
 }
-
 /* SEARCH RESULTS COMPONENT END */
 
 /* ERROR PAGE START */
-
 .error-page--background {
   height: 100vh;
   background-image: url("./assets/TV-no-signal.jpg");
@@ -356,7 +354,6 @@ body {
 .error-page--black-box > a:last-of-type:hover {
   color: #ff23e9;
 }
-
 /* ERROR PAGE END */
 
 .test-text {

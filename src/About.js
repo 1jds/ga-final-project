@@ -43,7 +43,6 @@ export default function About() {
           </p>
         </div>
       </div>
-      {/* <h2>You've fou  nd the About sub-page!</h2> */}
     </div>
   );
 }

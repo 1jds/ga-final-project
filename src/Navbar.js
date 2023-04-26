@@ -204,9 +204,6 @@ export default function Navbar(props) {
             </button>
           </div>
         </form>
-
-        {/* {results} */}
-        {/* <RhymingHelp wordToRhyme="dog" /> */}
       </div>
 
       <div>
@@ -219,8 +216,6 @@ export default function Navbar(props) {
         </Link>
       </div>
 
-      {/* <input type="text" />
-        <button>Q</button> */}
       <div className="navbar--links-collection">
         <Link className="navbar--link" to="/poems/about">
           About
@@ -241,23 +236,6 @@ export default function Navbar(props) {
           </Link>
         </Badge>
       </div>
-      {/* 
-      <div className="sort-and-search">
-        <input
-          type="text"
-          placeholder="Search"
-          value={this.state.searchString}
-          onChange={this.handleSearch}
-        />
-        <img src={search} className="search-svg" alt="search" />
-        <button onClick={this.handleSort} className="button-53">
-          Sort by ${" "}
-          <img
-            src={this.state.sortHighLow ? expand_more : expand_less}
-            alt="price-sort-icon"
-          />
-        </button>
-      </div> */}
     </div>
   );
 }

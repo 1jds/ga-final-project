@@ -80,18 +80,6 @@ export default function SearchResults(props) {
               )}
             </button>
           </div>
-          // <button
-          //   key={`${author.slice(0,3)}${title.slice(0,3)}${index}`}
-          //   onClick={() => handleSelect(index)}
-          //   className="search-results--list--button"
-          //   title="read poem"
-          //   aria-label="display details of this poem"
-          // >
-          //   <span>
-          //     <strong>{author}</strong>
-          //   </span>
-          //   <span>{title.length < 50 ? title : `${title.slice(0, 50)}...`}</span>
-          // </button>
         );
       }
     );
@@ -156,12 +144,6 @@ export default function SearchResults(props) {
               />
             </button>
           </div>
-          {/* {contextProps ? (
-            <pre>{JSON.stringify(contextProps, null, 2)}</pre>
-          ) : (
-            <></>
-          )} */}
-          {/* {resultsList.slice(firstIndex, lastIndex)} */}
         </div>
         <div>
           {selectedPoemDetails ? (
