@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import navLogoDark from "./assets/nav_logo_dark_theme.svg";
 import navLogoLight from "./assets/nav_logo_light_theme.svg";
@@ -24,25 +24,58 @@ export default function Navbar(props) {
     setIsAccessabilityDialogActive(boolParam);
   }
 
+  useEffect(() => {
+    const elementToTrapFocusOn = document.getElementById("accessability-modal");
+
+    var focusableEls = elementToTrapFocusOn.querySelectorAll("button, input");
+    var firstFocusableEl = focusableEls[0];
+    var lastFocusableEl = focusableEls[focusableEls.length - 1];
+    var KEYCODE_TAB = 9;
+
+    const handleTrapTab = (e) => {
+      var isTabPressed = e.key === "Tab" || e.keyCode === KEYCODE_TAB;
+
+      if (!isTabPressed) {
+        return;
+      }
+
+      if (e.shiftKey) {
+        /* shift + tab */ if (document.activeElement === firstFocusableEl) {
+          lastFocusableEl.focus();
+          e.preventDefault();
+        }
+      } /* tab */ else {
+        if (document.activeElement === lastFocusableEl) {
+          firstFocusableEl.focus();
+          e.preventDefault();
+        }
+      }
+    };
+
+    elementToTrapFocusOn.addEventListener("keydown", (e) => handleTrapTab(e));
+
+    return () => {
+      elementToTrapFocusOn.removeEventListener("keydown", (e) =>
+        handleTrapTab(e)
+      );
+    };
+  }, []);
+  // THIS FUNCTION MODIFIED FROM https://hidde.blog/using-javascript-to-trap-focus-in-an-element/
+
   return (
     <div className="navbar">
-      
       <button
-          aria-label="light or dark theme toggle"
-          onClick={() => {
-            props.setIsDarkMode((prevState) => !prevState);
-          }}
+        aria-label="light or dark theme toggle"
+        onClick={() => {
+          props.setIsDarkMode((prevState) => !prevState);
+        }}
         className={
           props.isDarkMode
             ? "navbar--light-dark-theme-toggle navbar--theme-icon-dark-mode"
             : "navbar--light-dark-theme-toggle navbar--theme-icon-light-mode"
         }
       >
-        {props.isDarkMode ? (
-            <DarkModeIcon />
-        ) : (
-            <LightModeIcon />
-        )}
+        {props.isDarkMode ? <DarkModeIcon /> : <LightModeIcon />}
       </button>
 
       <button
@@ -56,7 +89,9 @@ export default function Navbar(props) {
       >
         <AccessibilityNewOutlinedIcon />
       </button>
+      {/* ACCESSABILITY SETTINGS MODAL START */}
       <div
+        id="accessability-modal"
         tabIndex={-1}
         role="button"
         onClick={() => toggleAccessabilityDialogActiveState(false)}
@@ -100,10 +135,15 @@ export default function Navbar(props) {
               id="color-picker"
             />
           </div>
-          <button className="navbar--accessability-dialog-close-btn" onClick={() => toggleAccessabilityDialogActiveState(false)}>Close Dialog</button>
+          <button
+            className="navbar--accessability-dialog-close-btn"
+            onClick={() => toggleAccessabilityDialogActiveState(false)}
+          >
+            Close Dialog
+          </button>
         </div>
       </div>
-
+      {/* ACCESSABILITY MODAL END */}
       <div className="navbar--search-area">
         <form>
           <div>
@@ -187,18 +227,18 @@ export default function Navbar(props) {
               type="text"
               placeholder="Search e.g. Keats"
             />
-            
-              <Link
-                aria-label="click to search for poems"
-                style={{ textDecoration: "none", color: "inherit" }}
-                to="/poems/search"
-                element={<SearchResults />}
-                className="search-area--search-button"
-                onClick={(e) => props.handleSearch(e)}
-                disabled={!props.searchType || !props.searchTerm}
-              >
-                <SearchIcon />
-              </Link>
+
+            <Link
+              aria-label="click to search for poems"
+              style={{ textDecoration: "none", color: "inherit" }}
+              to="/poems/search"
+              element={<SearchResults />}
+              className="search-area--search-button"
+              onClick={(e) => props.handleSearch(e)}
+              disabled={!props.searchType || !props.searchTerm}
+            >
+              <SearchIcon />
+            </Link>
             {/* </button> */}
           </div>
         </form>
