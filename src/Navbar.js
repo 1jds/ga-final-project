@@ -26,7 +26,27 @@ export default function Navbar(props) {
 
   return (
     <div className="navbar">
+      
       <button
+          aria-label="light or dark theme toggle"
+          onClick={() => {
+            props.setIsDarkMode((prevState) => !prevState);
+          }}
+        className={
+          props.isDarkMode
+            ? "navbar--light-dark-theme-toggle navbar--theme-icon-dark-mode"
+            : "navbar--light-dark-theme-toggle navbar--theme-icon-light-mode"
+        }
+      >
+        {props.isDarkMode ? (
+            <DarkModeIcon />
+        ) : (
+            <LightModeIcon />
+        )}
+      </button>
+
+      <button
+        aria-label="accessability options"
         className={
           props.isDarkMode
             ? "navbar--accessability-options navbar--theme-icon-dark-mode"
@@ -37,6 +57,7 @@ export default function Navbar(props) {
         <AccessibilityNewOutlinedIcon />
       </button>
       <div
+        tabIndex={-1}
         role="button"
         onClick={() => toggleAccessabilityDialogActiveState(false)}
         className={
@@ -64,7 +85,7 @@ export default function Navbar(props) {
           <div className="navbar--accesability-dialog-input-box">
             <label
               className="navbar--accessability-dialog-input-label"
-              for="color-picker"
+              htmlFor="color-picker"
             >
               Color
             </label>
@@ -79,36 +100,10 @@ export default function Navbar(props) {
               id="color-picker"
             />
           </div>
+          <button className="navbar--accessability-dialog-close-btn" onClick={() => toggleAccessabilityDialogActiveState(false)}>Close Dialog</button>
         </div>
       </div>
 
-      <div
-        className={
-          props.isDarkMode
-            ? "navbar--light-dark-theme-toggle navbar--theme-icon-dark-mode"
-            : "navbar--light-dark-theme-toggle navbar--theme-icon-light-mode"
-        }
-      >
-        {props.isDarkMode ? (
-          <div
-            role="button"
-            onClick={() => {
-              props.setIsDarkMode((prevState) => !prevState);
-            }}
-          >
-            <DarkModeIcon />
-          </div>
-        ) : (
-          <div
-            role="button"
-            onClick={() => {
-              props.setIsDarkMode((prevState) => !prevState);
-            }}
-          >
-            <LightModeIcon />
-          </div>
-        )}
-      </div>
       <div className="navbar--search-area">
         <form>
           <div>
@@ -140,6 +135,7 @@ export default function Navbar(props) {
                 type="radio"
                 id="title"
                 name="fav_language"
+                tabIndex="0"
                 value="title"
                 checked={props.searchType === "title"}
               />
@@ -156,6 +152,7 @@ export default function Navbar(props) {
                 type="radio"
                 id="lines"
                 name="fav_language"
+                tabIndex="0"
                 value="lines"
                 checked={props.searchType === "lines"}
               />
@@ -172,6 +169,7 @@ export default function Navbar(props) {
                 type="radio"
                 id="linecount"
                 name="fav_language"
+                tabIndex="0"
                 value="linecount"
                 checked={props.searchType === "linecount"}
               />
@@ -189,19 +187,19 @@ export default function Navbar(props) {
               type="text"
               placeholder="Search e.g. Keats"
             />
-            <button
-              className="search-area--search-button"
-              onClick={(e) => props.handleSearch(e)}
-              disabled={!props.searchType || !props.searchTerm}
-            >
+            
               <Link
+                aria-label="click to search for poems"
                 style={{ textDecoration: "none", color: "inherit" }}
                 to="/poems/search"
                 element={<SearchResults />}
+                className="search-area--search-button"
+                onClick={(e) => props.handleSearch(e)}
+                disabled={!props.searchType || !props.searchTerm}
               >
                 <SearchIcon />
               </Link>
-            </button>
+            {/* </button> */}
           </div>
         </form>
       </div>

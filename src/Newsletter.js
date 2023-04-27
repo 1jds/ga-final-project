@@ -49,7 +49,7 @@ export default function Newsletter() {
           />
         </div>
         <div className="newsletter-page--form-input-element">
-          <label htmlFor="firstname">Last Name*</label>
+          <label htmlFor="lastname">Last Name*</label>
           <input
             onChange={(e) => handleFormInput(e)}
             type="text"
@@ -57,7 +57,7 @@ export default function Newsletter() {
           />
         </div>
         <div className="newsletter-page--form-input-element">
-          <label htmlFor="firstname">Email*</label>
+          <label htmlFor="email">Email*</label>
           <input onChange={(e) => handleFormInput(e)} type="email" id="email" />
         </div>
       </form>

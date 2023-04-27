@@ -109,6 +109,7 @@ export default function SearchResults(props) {
           </div>
           <div className="search-results--back-and-forward-btns-container">
             <button
+              aria-label="move back one page of results"
               onClick={() =>
                 setCurrentPageofResults((prevState) => {
                   return prevState === 1 ? 1 : prevState - 1;
@@ -127,6 +128,7 @@ export default function SearchResults(props) {
               Page {currentPageofResults} of {numberOfResultsPages}
             </p>
             <button
+              aria-label="move forward one page of results"
               onClick={() =>
                 setCurrentPageofResults((prevState) => {
                   return prevState === numberOfResultsPages

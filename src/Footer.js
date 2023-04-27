@@ -16,7 +16,7 @@ export default function Footer(props) {
         className="footer--logo"
       />
       <div className="footer--content-container">
-        <div className="footer-social-media-links">
+        <div className="footer--social-media-links">
           <FacebookIcon />
           <TwitterIcon />
           <InstagramIcon />

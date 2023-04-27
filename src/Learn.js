@@ -118,6 +118,7 @@ export default function Learn() {
           poem!
         </p>
         <select
+          aria-label="drop-down list to select a poet by name"
           onChange={(e) => {
             if (e.target.value === "default") {
               setIsInitialRender(true);
@@ -196,6 +197,7 @@ export default function Learn() {
             style={{ display: "flex", justifyContent: "center", width: "90%" }}
           >
             <img
+              alt="placeholder picture of roses"
               src={
                 outletContextProps.isDarkMode
                   ? rosesPlaceholderDark
