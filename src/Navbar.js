@@ -12,10 +12,10 @@ import AccessibilityNewOutlinedIcon from "@mui/icons-material/AccessibilityNewOu
 export default function Navbar(props) {
   const [badgeStyle, setBadgeStyle] = useState({
     "& .MuiBadge-badge": {
-      backgroundColor: '#e81c23',
-      color: '#ffffff'
-    }
-  })
+      backgroundColor: "#e81c23",
+      color: "#ffffff",
+    },
+  });
   const [accessabilityColorPickerValue, setAccessabilityColorPickerValue] =
     useState();
   const [isAccessabilityDialogActive, setIsAccessabilityDialogActive] =
@@ -67,7 +67,7 @@ export default function Navbar(props) {
     };
   }, []);
   // THIS FUNCTION MODIFIED FROM https://hidde.blog/using-javascript-to-trap-focus-in-an-element/
-  
+
   return (
     <div className="navbar">
       <button
@@ -137,9 +137,9 @@ export default function Navbar(props) {
                 setBadgeStyle({
                   "& .MuiBadge-badge": {
                     backgroundColor: e.target.value,
-                    color: '#ffffff'
-                  }
-                })
+                    color: "#ffffff",
+                  },
+                });
               }}
               className="navbar--accessability-dialog-color-input"
               type="color"
@@ -251,7 +251,6 @@ export default function Navbar(props) {
             >
               <SearchIcon />
             </Link>
-            {/* </button> */}
           </div>
         </form>
       </div>
@@ -284,7 +283,6 @@ export default function Navbar(props) {
           aria-label="count of number of poems added to favourites list"
           sx={badgeStyle}
           badgeContent={props.favouritesCount}
-          // color="error"
         >
           <Link className="navbar--link" to="/poems/favourites">
             Favourites

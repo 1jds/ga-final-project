@@ -52,6 +52,8 @@ export default function PoemsList() {
   const handleSearch = (e) => {
     e.preventDefault();
 
+    setLoading(true);
+
     if (!searchType || !searchTerm) {
       alert("Please select a category first, such as 'Author', or 'Title'.");
       return;
@@ -128,7 +130,7 @@ export default function PoemsList() {
           searchTerm={searchTerm}
         />
 
-        <Outlet context={{ APIresponse, isDarkMode }} />
+        <Outlet context={{ APIresponse, isDarkMode, loading, error }} />
         <Footer isDarkMode={isDarkMode} />
       </div>
     </FavesContext.Provider>

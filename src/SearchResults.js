@@ -105,7 +105,16 @@ export default function SearchResults(props) {
         <div>
           <div className="favourites-page--favourites-list-container">
             <h2 className="outlet-page--main-h2-heading">Search Results</h2>
-            {resultsList.slice(firstIndex, lastIndex)}
+            {outletContextProps.error ? (
+              <p>
+                An error has occured. Please try again.{" "}
+                {outletContextProps.error}
+              </p>
+            ) : outletContextProps.loading ? (
+              <p>Results loading. Please wait...</p>
+            ) : (
+              resultsList.slice(firstIndex, lastIndex)
+            )}
           </div>
           <div className="search-results--back-and-forward-btns-container">
             <button
