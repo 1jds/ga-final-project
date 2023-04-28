@@ -71,6 +71,12 @@ body {
   background: inherit;
 }
 
+@media only screen and (max-width: 1250px) {
+  .navbar {
+    padding: 2rem 1.15rem;
+  }
+}
+
 .navbar > div {
   flex: 1;
   /* background-color: bisque; */

@@ -18,7 +18,7 @@ export default function Favourites() {
     favouritesList = favesList.map(
       ({ author, linecount, lines, title }, index) => {
         return (
-          <div className="favourites-page--favourites-item-container">
+          <div key={`${author}${linecount}${index}`} className="favourites-page--favourites-item-container">
             <span className="favourites-page--favourites-list-item">
               <strong>{author}</strong>
             </span>

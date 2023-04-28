@@ -139,7 +139,7 @@ export default function Learn() {
           <>
             <div style={{ flex: "1", paddingTop: "1rem" }}>
               {wikiResponse ? (
-                <p class="learn-page--about-the-author-sub-heading">
+                <p className="learn-page--about-the-author-sub-heading">
                   About The Poet
                 </p>
               ) : null}
@@ -168,7 +168,7 @@ export default function Learn() {
               </div>
               {wikiResponse ? (
                 <div className="learn-page--youtube-iframe-container">
-                  <p class="learn-page--about-the-author-sub-heading">
+                  <p className="learn-page--about-the-author-sub-heading">
                     About Poetry (Learn More)
                   </p>
                   <iframe
@@ -176,9 +176,9 @@ export default function Learn() {
                     height="315"
                     src="https://www.youtube.com/embed/URuMb15CWJs"
                     title="YouTube video player"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
+                    allowFullScreen
                   ></iframe>
                 </div>
               ) : null}

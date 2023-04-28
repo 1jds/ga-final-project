@@ -13,7 +13,6 @@ export default function RhymingHelp(props) {
   });
 
   const handleRhymeWordSearch = (e) => {
-    e.preventDefault();
     setWordToRhyme(textInput);
   };
 

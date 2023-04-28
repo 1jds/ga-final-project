@@ -146,7 +146,7 @@ export default function Navbar(props) {
       {/* ACCESSABILITY MODAL END */}
       <div className="navbar--search-area">
         <form>
-          <div>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
             <div
               className="utility-class--inlineblock"
               title="Search by an author's first or last name"
