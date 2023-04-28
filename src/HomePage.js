@@ -23,7 +23,7 @@ export default function HomePage() {
               </p>
             </div>
             <p className="author-line">Design by James</p>
-            <div className="home-page--link-animation-div">
+            <div className="home-page--link-duplicate-element-behind">
               <Link to="/poems" className="home-page--link">
                 ENTER
               </Link>

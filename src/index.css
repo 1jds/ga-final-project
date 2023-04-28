@@ -205,7 +205,6 @@ body {
 }
 
 .navbar--search-area {
-  /* border: 3px solid dodgerblue; */
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -222,7 +221,6 @@ body {
 .search-area--search-input-area {
   margin: 0;
   border: 1px solid #aeaeae;
-  /* border: 1px solid var(--primary-red); */
   background-color: #f1f1f1;
   height: 36px;
   box-sizing: border-box;
@@ -288,7 +286,6 @@ body {
 /* NAVBAR END */
 
 /* SEARCH RESULTS COMPONENT START */
-
 .search-results--container {
   display: flex;
   padding: var(--poems-component-outlet-padding);
@@ -313,7 +310,6 @@ body {
   justify-content: center;
   gap: 0.5rem;
   margin-top: 1rem;
-  /* background-color: pink; */
 }
 
 .search-results--back-and-forward-btns-container > button {
@@ -391,31 +387,6 @@ body {
   color: #ff23e9;
 }
 /* ERROR PAGE END */
-
-.test-text {
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  margin: -25px 0px;
-  padding: 0px;
-  letter-spacing: 5px;
-  font-family: var(--old-type-font);
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  /* line-height specified for Firefox compatability */
-}
-
-.test-container {
-  margin: 50px;
-  padding: 0px;
-  width: 72px;
-  height: 115px;
-  border: 2px solid var(--primary-red);
-}
-
-.first-letter-test {
-  color: var(--primary-red);
-  font-weight: bold;
-}
 
 /* HOMEPAGE START */
 /* BOOK COVER DESIGN INSPIRED BY https://codepen.io/Lionad/pen/XWMMNKK?editors=1000 ADAPTING SOME SHADOWS FROM HERE, BUT CLEARLY NOT AS PRO! */
@@ -523,14 +494,12 @@ body {
 
 .text-box-and-button p:first-child {
   color: white;
-  /* font-size: 1.6rem; */
   font-size: 3.5vh;
   font-weight: 500;
 }
 
 .text-box-and-button p:nth-child(2) {
   color: #e7cea5;
-  /* font-size: 1.5rem; */
   font-size: 3.2vh;
   margin-top: 0.75rem;
 }
@@ -542,17 +511,28 @@ body {
   bottom: 1.5%;
   left: 14%;
   font-family: "Times New Roman", Times, serif;
-  /* font-size: 1.25rem; */
   font-size: 2.75vh;
   color: #e7cea5;
+}
+
+.home-page--link-duplicate-element-behind {
+  position: absolute;
+  width: 4.2vh;
+  height: 15.6vh;
+  bottom: 9.9vh;
+  right: 0.7vh;
+  animation-name: buttonhint;
+  animation-duration: 8s;
+  animation-delay: 10s;
+  animation-iteration-count: infinite;
 }
 
 .home-page--link {
   position: absolute;
   width: 4.2vh;
   height: 15.6vh;
-  bottom: 9.9vh;
-  right: 0.7vh;
+  /* bottom: 9.9vh;
+  right: 0.7vh; */
   cursor: pointer;
   z-index: 1;
   display: flex;
@@ -568,6 +548,20 @@ body {
   font-size: 2.75vh;
 }
 
+@keyframes buttonhint {
+  0% {
+    box-shadow: 0 0 0px white;
+  }
+
+  50% {
+    box-shadow: 0 0 10px white;
+  }
+
+  100% {
+    box-shadow: 0 0 0px white;
+  }
+}
+
 .home-page--link:hover,
 .home-page--link:focus {
   transition: 0.75s;
@@ -577,12 +571,9 @@ body {
   box-shadow: inset 0 0 5px 2px rgba(0, 0, 0, 0.4);
   border-radius: 2px;
 }
+/* HOMEPAGE END */
 
-/* .home-page--link-animation-div {
-
-} */
-/* HOMEPAGE START */
-
+/* FOOTER START */
 .footer--container {
   margin: 0 auto;
   max-width: 90%;
@@ -635,7 +626,6 @@ body {
 
 .footer--social-media-links > svg {
   padding-right: 2rem;
-  /* margin-right: 2rem; */
   font-size: 2rem;
   border-right: 1px solid var(--primary-red);
 }
@@ -688,10 +678,7 @@ body {
   color: var(--primary-red);
   text-decoration: none;
 }
-
-.learn-page--wikipedia-html-text-div > p {
-  margin-top: 0px;
-}
+/* FOOTER END */
 
 /* ABOUT PAGE START */
 .about-page--container {
@@ -711,7 +698,6 @@ body {
 }
 
 .about-page--history-info-container {
-  /* border-top: 1px solid gainsboro; */
   border-top: 1px solid var(--primary-red);
   display: flex;
   gap: 2rem;
@@ -719,7 +705,6 @@ body {
 }
 
 .about-page--history-info-container > div:first-child {
-  /* border-top: 7px solid gainsboro; */
   border-top: 7px solid var(--primary-red);
   min-width: 200px;
 }
@@ -743,7 +728,6 @@ body {
   font-weight: 400;
   margin: 0.75rem 0rem;
 }
-
 /* ABOUT PAGE END */
 
 /* FAVOURITES PAGE START */
@@ -775,38 +759,27 @@ body {
 
 .favourites-page--favourites-item-container {
   display: flex;
-  /* align-items: center; */
   gap: 0.75rem;
-  /* background-color: aquamarine; */
   border-left: 3px solid var(--primary-red);
   padding: 0rem 0.75rem;
-  /* grid-template-columns: 1fr 2rem; */
 }
 
 .favourites-page--favourites-list-item-container > span {
-  /* vertical-align: middle; */
   margin-right: 0.75rem;
 }
 
 .favourites-page--favourites-list-item {
-  /* height: 2rem; */
-  /* max-height: 1rem; */
   padding: 0;
   margin: 0;
   border: none;
-  /* background: pink; */
-  /* background-color: aquamarine; */
   font-size: 1.15rem;
   background-color: inherit;
 }
 
 .favourites-page--favourites-list-item-btn {
-  /* height: 2rem; */
-  /* max-height: 1.25rem; */
   padding: 0;
   margin: 0;
   border: none;
-  /* background: pink; */
   background-color: inherit;
 }
 
@@ -815,10 +788,6 @@ body {
 }
 
 .favourites-page--material-icons {
-  /* background-color: #ff23e9;
-  display: flex;
-  align-items: center;
-  justify-content: center; */
   vertical-align: middle;
   background-color: inherit;
 }
@@ -831,7 +800,6 @@ body {
   color: var(--primary-red);
   cursor: pointer;
 }
-
 /* FAVOURITES PAGE END */
 
 /* POEM DETAILS START */
@@ -944,7 +912,6 @@ body {
   font-weight: bold;
   padding: 0rem 0.75rem;
   transition: 0.25s;
-  /* max-width: 400px; */
 }
 
 .newsletter-page--form-input-element > input:hover,
@@ -981,7 +948,6 @@ body {
   color: #636363;
   font-size: 0.85rem;
 }
-
 /* NEWSLETTER END */
 
 /* CREATE PAGE START */
@@ -996,12 +962,11 @@ body {
 }
 
 .create-page--two-parts-flex-container > *:first-child {
-  /* grow-shrink-basis */
+  /* grow - shrink - basis */
   flex: 3 1 0;
 }
 
 .create-page--two-parts-flex-container > *:last-child {
-  /* grow-shrink-basis */
   flex: 1 1 0;
 }
 
@@ -1101,10 +1066,13 @@ body {
   list-style: none;
   padding: 1rem;
 }
-
 /* CREATE PAGE END */
 
 /* LEARN PAGE START */
+.learn-page--wikipedia-html-text-div > p {
+  margin-top: 0px;
+}
+
 .learn-page--container {
   padding: var(--poems-component-outlet-padding);
 }
@@ -1157,5 +1125,4 @@ body {
 .learn-page--youtube-iframe-container > iframe {
   border-radius: 1rem;
 }
-
 /* LEARN PAGE END */

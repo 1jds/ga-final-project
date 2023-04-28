@@ -10,6 +10,12 @@ import Badge from "@mui/material/Badge";
 import AccessibilityNewOutlinedIcon from "@mui/icons-material/AccessibilityNewOutlined";
 
 export default function Navbar(props) {
+  const [badgeStyle, setBadgeStyle] = useState({
+    "& .MuiBadge-badge": {
+      backgroundColor: '#e81c23',
+      color: '#ffffff'
+    }
+  })
   const [accessabilityColorPickerValue, setAccessabilityColorPickerValue] =
     useState();
   const [isAccessabilityDialogActive, setIsAccessabilityDialogActive] =
@@ -61,7 +67,7 @@ export default function Navbar(props) {
     };
   }, []);
   // THIS FUNCTION MODIFIED FROM https://hidde.blog/using-javascript-to-trap-focus-in-an-element/
-
+  
   return (
     <div className="navbar">
       <button
@@ -128,6 +134,12 @@ export default function Navbar(props) {
               onChange={(e) => {
                 setAccessabilityColorPickerValue(e.target.value);
                 changeRootCustomProperty("--primary-red", e.target.value);
+                setBadgeStyle({
+                  "& .MuiBadge-badge": {
+                    backgroundColor: e.target.value,
+                    color: '#ffffff'
+                  }
+                })
               }}
               className="navbar--accessability-dialog-color-input"
               type="color"
@@ -146,7 +158,7 @@ export default function Navbar(props) {
       {/* ACCESSABILITY MODAL END */}
       <div className="navbar--search-area">
         <form>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
+          <div style={{ display: "flex", alignItems: "center" }}>
             <div
               className="utility-class--inlineblock"
               title="Search by an author's first or last name"
@@ -268,7 +280,12 @@ export default function Navbar(props) {
           Create
         </Link>
 
-        <Badge badgeContent={props.favouritesCount} color="error">
+        <Badge
+          aria-label="count of number of poems added to favourites list"
+          sx={badgeStyle}
+          badgeContent={props.favouritesCount}
+          // color="error"
+        >
           <Link className="navbar--link" to="/poems/favourites">
             Favourites
           </Link>
