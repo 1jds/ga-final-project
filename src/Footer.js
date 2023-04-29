@@ -17,11 +17,11 @@ export default function Footer(props) {
       />
       <div className="footer--content-container">
         <div className="footer--social-media-links">
-          <FacebookIcon />
-          <TwitterIcon />
-          <InstagramIcon />
-          <PinterestIcon />
-          <TelegramIcon />
+          <a target="_blank" href="https://www.facebook.com"><FacebookIcon /></a>
+          <a target="_blank" href="https://www.twitter.com"><TwitterIcon /></a>
+          <a target="_blank" href="https://www.instagram.com"><InstagramIcon /></a>
+          <a target="_blank" href="https://www.pinterest.com"><PinterestIcon /></a>
+          <a target="_blank" href="https://www.telegram.org"><TelegramIcon /></a>
         </div>
         <div>
           <ul className="footer--communications-links">

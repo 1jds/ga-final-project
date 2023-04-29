@@ -5,7 +5,7 @@ import { FavesContext } from "./Poems";
 export default function PoemDetail(props) {
   // console.log("PoemDetails Props:", props.selectedPoemDetails);
   const { author, linecount, lines, title } = props.selectedPoemDetails;
-  // console.log("successful destructure?", author, linecount, lines, title)
+  console.log("successful destructure?", author, linecount, lines, title)
   const poetPictureObj = poetPicturesData.find(
     (element) => element.poetname === author
   );
@@ -56,6 +56,16 @@ export default function PoemDetail(props) {
       >
         {alreadyFaved ? "Remove from Favourites" : "Add to Favourites"}
       </button>
+      {props.randomBtn && (
+        <button
+          className="poem-detail--add-to-favourites-btn"
+          onClick={() => {
+            props.handleRandomPoemByThisAuthor(author)            
+          }}
+        >
+          Random Poem By This Poet
+        </button>
+      )}
     </div>
   );
 }

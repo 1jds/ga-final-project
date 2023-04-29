@@ -105,7 +105,7 @@ export default function Learn() {
           return item;
         };
         const returnedRandomPoem = getRandomPoem(poemsByThisAuthorData);
-        console.log(returnedRandomPoem);
+        // console.log(returnedRandomPoem);
         setRandomPoetsPoem(returnedRandomPoem);
       });
   };
@@ -189,6 +189,8 @@ export default function Learn() {
                 <PoemDetail
                   selectedPoemDetails={randomPoetsPoem}
                   displayImg={false}
+                  randomBtn={true}
+                  handleRandomPoemByThisAuthor={handleRandomPoemByThisAuthor}
                 />
               ) : null}
             </div>

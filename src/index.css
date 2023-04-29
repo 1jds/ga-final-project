@@ -619,23 +619,22 @@ body {
 }
 
 .footer--social-media-links {
-  color: var(--primary-red);
   display: flex;
   gap: 2rem;
 }
 
-.footer--social-media-links > svg {
-  padding-right: 2rem;
-  font-size: 2rem;
+.footer--social-media-links > a:not(:last-of-type) {
   border-right: 1px solid var(--primary-red);
 }
 
-.footer--social-media-links > svg:hover {
-  color: rgb(90, 90, 90);
+.footer--social-media-links > a > svg {
+  color: var(--primary-red);
+  padding-right: 2rem;
+  font-size: 2rem;
 }
 
-.footer--social-media-links > :last-child {
-  border: none;
+.footer--social-media-links > a > svg:hover {
+  color: rgb(90, 90, 90);
 }
 
 .footer--communications-links {
@@ -864,6 +863,7 @@ body {
   padding: 0.25rem 0.75rem;
   margin-top: 1rem;
   cursor: pointer;
+  display: block;
 }
 /* POEM DETAILS END */
 
