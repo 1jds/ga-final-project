@@ -151,7 +151,7 @@ export default function Learn() {
                   gap: "1rem",
                 }}
               >
-                {wikiResponse ? (
+                {wikiResponse.thumbnail ? (
                   <img
                     src={wikiResponse.thumbnail.source}
                     style={{ maxWidth: "200px", borderRadius: "1rem" }}
