@@ -30,7 +30,7 @@ export default function Learn() {
       setHtmlExtract(sanitizeHtml(wikiResponse.extract_html));
       // wikipedia data may be sanitized already on their server, but it is publically editable, so a quick safety measure here before setting innerHTML.
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps  
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wikiResponse]);
 
   function createBioMarkup() {
