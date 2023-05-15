@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { FavesContext } from "./Poems";
 import { useOutletContext } from "react-router";
 import PoemDetail from "./PoemDetail";
@@ -11,9 +11,9 @@ import flowersPlaceholderLightMode from "./assets/flowers_placeholder_light_them
 import flowersPlaceholderDarkMode from "./assets/flowers_placeholder_dark_theme.svg";
 
 export default function SearchResults(props) {
+  // console.log(props)
   const { favesList, handleFavourited } = useContext(FavesContext);
   const outletContextProps = useOutletContext();
-  // console.log("Context Props Equals...", outletContextProps);
   const numberOfResultsPages = Math.ceil(
     outletContextProps.APIresponse.length / 20
   );
@@ -94,7 +94,10 @@ export default function SearchResults(props) {
   const [currentPageofResults, setCurrentPageofResults] = useState(1);
   const lastIndex = currentPageofResults * 20;
   const firstIndex = lastIndex - 20;
-
+  useEffect(() => {
+    // console.log("Context Props Equals...", outletContextProps);
+    setCurrentPageofResults(1)
+  }, [outletContextProps.APIresponse])
   // console.log("results list just before render", resultsList);
 
   const clearSelectedPoemDetails = () => {};
