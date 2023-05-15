@@ -32,7 +32,8 @@ body {
 }
 
 ::selection {
-  background: rgba(232, 28, 35, 0.2);
+  background: var(--primary-red);
+  color: white;
 }
 
 .utility-class--inlineblock {
