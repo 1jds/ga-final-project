@@ -926,6 +926,12 @@ img {
   margin: 2rem 0rem;
 }
 
+@media screen and (max-width: 550px) {
+  .newsletter-page--form-element {
+    grid-template-columns: 1fr;
+  }
+}
+
 .newsletter-page--form-input-element {
   display: flex;
   flex-direction: column;
