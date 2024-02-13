@@ -144,14 +144,7 @@ export default function Learn() {
                   About The Poet
                 </p>
               ) : null}
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  alignItems: "flex-start",
-                  gap: "1rem",
-                }}
-              >
+              <div className="learn-page--about-the-author-details">
                 {wikiResponse.thumbnail ? (
                   <img
                     src={wikiResponse.thumbnail.source}

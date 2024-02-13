@@ -1172,6 +1172,12 @@ img {
   margin: 1.5rem 0rem;
 }
 
+.learn-page--about-the-author-details {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
 .learn-page--youtube-iframe-container {
   padding: 2rem 0rem;
 }
@@ -1183,6 +1189,10 @@ img {
 @media screen and (max-width: 650px) {
   .learn-page--youtube-iframe-container {
     display: none;
+  }
+
+  .learn-page--about-the-author-details {
+    flex-wrap: wrap;
   }
 }
 /* LEARN PAGE END */
