@@ -16,7 +16,7 @@ export default function Create() {
     `; ${document.cookie}`.split(`; ${name}=`).pop().split(";").shift();
 
   return (
-    <div className="create-page--container">
+    <div className="create-page--container utility-class--content-container-1500">
       <h2 className="outlet-page--main-h2-heading">Compose Your Own Poem</h2>
       <div className="create-page--two-parts-flex-container">
         <div className="create-page--user-compose-poem-container">

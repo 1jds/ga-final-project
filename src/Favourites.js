@@ -78,7 +78,7 @@ export default function Favourites() {
 
   return (
     <>
-      <div className="favourites-page--container">
+      <div className="favourites-page--container utility-class--content-container-1500">
         <div className="favourites-page--favourites-list-container">
           <h2 className="outlet-page--main-h2-heading">
             Your Saved Favourite Poems

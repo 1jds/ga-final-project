@@ -2,18 +2,16 @@ import teamMeetingImg from "./assets/vintage_business_meeting.jpg";
 
 export default function About() {
   return (
-    <div className="about-page--container">
-      <div className="utility-class--content-container-80">
-        <h2 className="outlet-page--main-h2-heading">About Us</h2>
-        <img
-          className="about-page--hero-img"
-          src={teamMeetingImg}
-          alt="our company team"
-        />
-        <p className="about-page--image-caption-text">
-          Some imaginary staff from The Poetry Place's fictional history.
-        </p>
-      </div>
+    <div className="about-page--container utility-class--content-container-1500">
+      <h2 className="outlet-page--main-h2-heading">About Us</h2>
+      <img
+        className="about-page--hero-img"
+        src={teamMeetingImg}
+        alt="our company team"
+      />
+      <p className="about-page--image-caption-text">
+        Some imaginary staff from The Poetry Place's fictional history.
+      </p>
       <div className="about-page--history-info-container">
         <div>
           <p>The Story and History of The Poetry Place</p>

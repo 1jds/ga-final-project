@@ -111,7 +111,7 @@ export default function Learn() {
   };
 
   return (
-    <section className="learn-page--container">
+    <section className="learn-page--container utility-class--content-container-1500">
       <h2 className="outlet-page--main-h2-heading">Learn About The Poets!</h2>
       <div className="learn-page--tag-line-and-search-container">
         <p>
