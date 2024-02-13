@@ -576,7 +576,8 @@ body {
 
 /* FOOTER START */
 .footer--container {
-  margin: 0 auto;
+  margin-inline: auto;
+  margin-top: 6rem;
   max-width: 90%;
   border-top: 1px solid var(--primary-red);
   padding: 2rem;
@@ -621,6 +622,7 @@ body {
 
 .footer--social-media-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
@@ -683,6 +685,11 @@ body {
 /* ABOUT PAGE START */
 .about-page--container {
   padding: var(--poems-component-outlet-padding);
+}
+
+.about-page--hero-container {
+  max-width: 80%;
+  margin-inline: auto;
 }
 
 .about-page--hero-img {
