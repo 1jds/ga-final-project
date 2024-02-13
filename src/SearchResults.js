@@ -96,8 +96,8 @@ export default function SearchResults(props) {
   const firstIndex = lastIndex - 20;
   useEffect(() => {
     // console.log("Context Props Equals...", outletContextProps);
-    setCurrentPageofResults(1)
-  }, [outletContextProps.APIresponse])
+    setCurrentPageofResults(1);
+  }, [outletContextProps.APIresponse]);
   // console.log("results list just before render", resultsList);
 
   const clearSelectedPoemDetails = () => {};
@@ -184,7 +184,7 @@ export default function SearchResults(props) {
                     : flowersPlaceholderLightMode
                 }
                 alt="flower background placeholder"
-                style={{ maxWidth: "300px" }}
+                style={{ width: "300px" }}
               />
             </div>
           )}

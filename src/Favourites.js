@@ -18,7 +18,10 @@ export default function Favourites() {
     favouritesList = favesList.map(
       ({ author, linecount, lines, title }, index) => {
         return (
-          <div key={`${author}${linecount}${index}`} className="favourites-page--favourites-item-container">
+          <div
+            key={`${author}${linecount}${index}`}
+            className="favourites-page--favourites-item-container"
+          >
             <span className="favourites-page--favourites-list-item">
               <strong>{author}</strong>
             </span>
@@ -107,7 +110,7 @@ export default function Favourites() {
                     : flowersPlaceholderLightMode
                 }
                 alt="background flower placeholder"
-                style={{ maxWidth: "300px" }}
+                style={{ width: "300px" }}
               />
             </div>
           )}

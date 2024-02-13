@@ -135,10 +135,10 @@ export default function Learn() {
           {poetNamesList ? poetNamesList : null}
         </select>
       </div>
-      <div style={{ display: "flex", gap: "3rem" }}>
+      <div className="learn-page--selection-results-container">
         {wikiResponse ? (
           <>
-            <div style={{ flex: "1", paddingTop: "1rem" }}>
+            <div className="learn-page--about-the-poet-container">
               {wikiResponse ? (
                 <p className="learn-page--about-the-author-sub-heading">
                   About The Poet
@@ -147,6 +147,7 @@ export default function Learn() {
               <div
                 style={{
                   display: "flex",
+                  flexWrap: "wrap",
                   alignItems: "flex-start",
                   gap: "1rem",
                 }}

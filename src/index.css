@@ -764,6 +764,7 @@ img {
 /* FAVOURITES PAGE START */
 .favourites-page--container {
   display: flex;
+  flex-wrap: wrap;
   padding: var(--poems-component-outlet-padding);
   min-height: 40vh;
 }
@@ -844,6 +845,7 @@ img {
 
 .poem-detail--author-information {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
@@ -989,6 +991,7 @@ img {
 
 .create-page--two-parts-flex-container {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   gap: 2rem;
 }
@@ -1143,6 +1146,20 @@ img {
   background-color: pink;
 }
 
+.learn-page--selection-results-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.learn-page--about-the-poet-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+}
+
 .learn-page--about-the-author-sub-heading {
   font-family: var(--eb-garamond-font);
   font-size: 1.75rem;
@@ -1156,5 +1173,11 @@ img {
 
 .learn-page--youtube-iframe-container > iframe {
   border-radius: 1rem;
+}
+
+@media screen and (max-width: 650px) {
+  .learn-page--youtube-iframe-container {
+    display: none;
+  }
 }
 /* LEARN PAGE END */
