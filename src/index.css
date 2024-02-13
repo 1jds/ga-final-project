@@ -1111,6 +1111,7 @@ img {
 /* LEARN PAGE START */
 .learn-page--wikipedia-html-text-div > p {
   margin-top: 0px;
+  max-width: 50ch;
 }
 
 .learn-page--container {
