@@ -601,10 +601,6 @@ img {
     align-items: center;
   }
 
-  .footer--content-container {
-    align-items: center;
-  }
-
   .footer--communications-links {
     justify-content: center;
   }
@@ -641,6 +637,7 @@ img {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
+  align-items: inherit;
 }
 
 .footer--social-media-links {
@@ -683,6 +680,7 @@ img {
 .footer--copyright {
   display: flex;
   justify-content: space-between;
+  align-items: inherit;
   flex-wrap: wrap;
   margin-bottom: 1rem;
 }
