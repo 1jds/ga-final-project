@@ -36,6 +36,10 @@ body {
   color: white;
 }
 
+img {
+  max-width: 100%;
+}
+
 .utility-class--inlineblock {
   display: inline-block;
 }
@@ -44,6 +48,11 @@ body {
   width: 100%;
   max-width: 175px;
   height: auto;
+}
+
+.utility-class--content-container-80 {
+  max-width: 80%;
+  margin-inline: auto;
 }
 
 .poems--container {
@@ -587,6 +596,20 @@ body {
   gap: 2rem;
 }
 
+@media screen and (max-width: 600px) {
+  .footer--container {
+    align-items: center;
+  }
+
+  .footer--content-container {
+    align-items: center;
+  }
+
+  .footer--communications-links {
+    justify-content: center;
+  }
+}
+
 .footer--logo {
   max-width: 225px;
   background: var(--footer-fill);
@@ -687,11 +710,6 @@ body {
   padding: var(--poems-component-outlet-padding);
 }
 
-.about-page--hero-container {
-  max-width: 80%;
-  margin-inline: auto;
-}
-
 .about-page--hero-img {
   width: 100%;
 }
@@ -709,6 +727,12 @@ body {
   display: flex;
   gap: 2rem;
   max-width: 80%;
+}
+
+@media screen and (max-width: 700px) {
+  .about-page--history-info-container {
+    flex-wrap: wrap;
+  }
 }
 
 .about-page--history-info-container > div:first-child {

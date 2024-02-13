@@ -3,7 +3,7 @@ import teamMeetingImg from "./assets/vintage_business_meeting.jpg";
 export default function About() {
   return (
     <div className="about-page--container">
-      <div className="about-page--hero-container">
+      <div className="utility-class--content-container-80">
         <h2 className="outlet-page--main-h2-heading">About Us</h2>
         <img
           className="about-page--hero-img"
